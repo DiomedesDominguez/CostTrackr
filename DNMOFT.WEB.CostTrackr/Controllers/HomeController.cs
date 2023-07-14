@@ -19,8 +19,13 @@ public class HomeController : Controller
         return View();
     }
     
-    [Authorize]
+    //[Authorize]
     public IActionResult Privacy()
+    {
+        return View();
+    }
+
+        public IActionResult Cookies()
     {
         return View();
     }

@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/DNMOFT.WEB.CostTrackr/bin/Debug/net7.0/DNMOFT.WEB.CostTrackr.dll",
+            "program": "${workspaceFolder}/Web/bin/Debug/net8.0/DNMOFT.CostTrackr.WEB.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/DNMOFT.WEB.CostTrackr",
+            "cwd": "${workspaceFolder}/Web",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

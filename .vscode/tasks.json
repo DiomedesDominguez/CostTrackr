@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/DNMOFT.WEB.CostTrackr/DNMOFT.WEB.CostTrackr.csproj",
+                "${workspaceFolder}/Web/DNMOFT.WEB.CostTrackr.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/DNMOFT.WEB.CostTrackr/DNMOFT.WEB.CostTrackr.csproj",
+                "${workspaceFolder}/Web/DNMOFT.WEB.CostTrackr.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/DNMOFT.WEB.CostTrackr/DNMOFT.WEB.CostTrackr.csproj"
+                "${workspaceFolder}/Web/DNMOFT.WEB.CostTrackr.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -3,15 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNMOFT.CostTrackr.Web", "Web\DNMOFT.CostTrackr.Web.csproj", "{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		PostgreDebug|Any CPU = PostgreDebug|Any CPU
+		PostgreRelease|Any CPU = PostgreRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.PostgreDebug|Any CPU.ActiveCfg = PostgreDebug|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.PostgreDebug|Any CPU.Build.0 = PostgreDebug|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.PostgreRelease|Any CPU.ActiveCfg = PostgreRelease|Any CPU
+		{45059BEA-D9B1-4FE4-9E01-83B2DABFFDB3}.PostgreRelease|Any CPU.Build.0 = PostgreRelease|Any CPU
 	EndGlobalSection
 EndGlobal

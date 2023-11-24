@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>DNMOFT.CostTrackr.Web</UserSecretsId>
-    <Configurations>Debug;Release;PostgreDebug;PostgreDebug</Configurations>
+    <Configurations>Debug;Release;PostgreDebug;PostgreRelease</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +14,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
+    <PackageReference Include="Npgsql" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

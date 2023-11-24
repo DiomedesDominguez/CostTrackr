@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.env
 
 # Custom connectionstrings
 connectionstrings.json

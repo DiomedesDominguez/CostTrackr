@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  dbCostTrackr:
+    restart: always
+    image: "postgis/postgis:13-3.1-alpine"
+    container_name: dbCostTrackr
+    env_file: "DB Server/db.env"
+    ports: 
+      - 36000:5432 # Remove when the web service it's ready
+    volumes:
+      - datum:/var/lib/postgresql/data
+  # This is just to have DB Admin access to the database this can be removed later on the project
+  dbCostTrackrManager:
+    restart: always
+    image: dpage/pgadmin4
+    container_name: dbCostTrackrManager
+    env_file: "DB Server/db_admin.env"
+    ports: 
+      - 36010:80
+    volumes:
+      - manager:/pgadmin4
+      - lybraries:/var/lib/pgadmin
+  # CostTrackrWeb:
+  #   restart: always
+  #   container_name: CostTrackr
+  #   ports:
+  #     - 36100:80
+  #   user: root
+  #   depends_on:
+  #     - db
+  #   build: 
+  #     context: .
+  #     dockerfile: dockerfile
+volumes:
+  myapp:
+  datum:
+  manager:
+  lybraries:

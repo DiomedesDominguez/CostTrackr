@@ -12,9 +12,7 @@
 *.env
 
 # Custom settings
-appsettings.Development.json
 connectionstrings.json
-
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

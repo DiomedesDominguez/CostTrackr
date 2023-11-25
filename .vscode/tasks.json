@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build debug",
             "command": "dotnet",
             "type": "process",
             "args": [
@@ -10,6 +10,20 @@
                 "${workspaceFolder}/Web/DNMOFT.CostTrackr.Web.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build postgre",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Web/DNMOFT.CostTrackr.Web.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary",
+                "-c",
+                "PostgreDebug"
             ],
             "problemMatcher": "$msCompile"
         },

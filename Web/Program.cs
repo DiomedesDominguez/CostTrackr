@@ -3,12 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using DNMOFT.CostTrackr.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
+//builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? 
+var connectionString = 
+
+#if POSTGREDEBUG || POSTGRERELEASE
+builder.Configuration.GetConnectionString("PostgreConnection") ?? 
+                        throw new InvalidOperationException("Connection string 'PostgreConnection' not found.");
+#endif
+#if DEBUG || RELEASE
+builder.Configuration.GetConnectionString("DefaultConnection") ?? 
                         throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-                        
+#endif
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

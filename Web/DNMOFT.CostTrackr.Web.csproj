@@ -6,6 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>DNMOFT.CostTrackr.Web</UserSecretsId>
     <Configurations>Debug;Release;PostgreDebug;PostgreRelease</Configurations>
+    <NoWarn>CS8618</NoWarn>
+    <NoWarn>CS8765</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

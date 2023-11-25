@@ -31,6 +31,10 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
         [Column(Order = 0)]
         public long Id { get; set; }
         private bool disposed = false;
+        public mUserRole()
+        {
+            ClientIp = "'127.0.0.1'";
+        }
 
         protected virtual void Dispose(bool disposing)
         {

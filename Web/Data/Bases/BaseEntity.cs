@@ -11,7 +11,7 @@ namespace DNMOFT.CostTrackr.Web.Data.Bases
     public class BaseEntity : IBaseEntity
     {
         [MaxLength(15), Required, DefaultValue("'127.0.0.1'")]
-        public string ClientIp { get; set; }
+        public string ClientIp { get; set; } 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Required]
         public DateTime Created { get; set; }

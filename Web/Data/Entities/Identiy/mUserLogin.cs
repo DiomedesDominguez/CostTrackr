@@ -11,14 +11,14 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     public class mUserLogin : IdentityUserLogin<long>, IBaseEntity
     {
         [Column(TypeName = "varchar(450)")]
-        public override string LoginProvider { get; set; }
+        public override string LoginProvider { get; set; } 
         [Column(TypeName = "varchar(450)")]
-        public override string ProviderKey { get; set; }
+        public override string ProviderKey { get; set; } 
         [Column(TypeName = "text")]
-        public override string ProviderDisplayName { get; set; }
+        public override string ProviderDisplayName { get; set; } 
         [MaxLength(15), Column(TypeName = "varchar(15)")]
         [Required, DefaultValue("'127.0.0.1'")]
-        public string ClientIp { get; set; }
+        public string ClientIp { get; set; } 
 
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
@@ -41,7 +41,10 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
 
         private bool disposed = false;
 
-        
+        public mUserLogin()
+        {
+            User = new mUser();
+        }
 
         protected virtual void Dispose(bool disposing)
         {

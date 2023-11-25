@@ -13,15 +13,15 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     public class mRole : IdentityRole<long>
     {
         [Column(TypeName = "text")]
-        public override string ConcurrencyStamp { get; set; }
+        public override string ConcurrencyStamp { get; set; } 
         [Column(TypeName = "varchar(256)")]
-        public override string Name { get; set; }
+        public override string Name { get; set; } 
         [Column(TypeName = "varchar(256)"), MaxLength(256)]
-        public override string NormalizedName { get; set; }
+        public override string NormalizedName { get; set; } 
 
         [MaxLength(15), Column(TypeName = "varchar(15)")]
         [DefaultValue("'127.0.0.1'"), Required]
-        public string ClientIp { get; set; }
+        public string ClientIp { get; set; } 
 
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

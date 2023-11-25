@@ -14,19 +14,19 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     public class mUser : IdentityUser<long>
     {
         [Column(TypeName = "text")]
-        public override string ConcurrencyStamp { get; set; }
+        public override string ConcurrencyStamp { get; set; } 
         [Column(TypeName = "varchar(128)")]
-        public override string Email { get; set; }
+        public override string Email { get; set; } 
         [Column(TypeName = "varchar(128)")]
-        public override string NormalizedEmail { get; set; }
+        public override string NormalizedEmail { get; set; } 
         [Column(TypeName = "varchar(128)")]
-        public override string NormalizedUserName { get; set; }
+        public override string NormalizedUserName { get; set; } 
         [Column(TypeName = "text")]
-        public override string PasswordHash { get; set; }
+        public override string PasswordHash { get; set; } 
         [Column(TypeName = "varchar(15)")]
-        public override string PhoneNumber { get; set; }
+        public override string PhoneNumber { get; set; } 
         [Column(TypeName = "text")]
-        public override string SecurityStamp { get; set; }
+        public override string SecurityStamp { get; set; } 
         [Column(TypeName = "varchar(128)")]
         public override string UserName { get; set; }
         [MaxLength(15), Column(TypeName = "varchar(15)")]

@@ -11,14 +11,14 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     public class mUserToken : IdentityUserToken<long>
     {
         [Column(TypeName = "varchar(450)")]
-        public override string LoginProvider { get; set; }
+        public override string LoginProvider { get; set; }  
         [Column(TypeName = "varchar(450)")]
-        public override string Name { get; set; }
+        public override string Name { get; set; }  
         [Column(TypeName = "text")]
-        public override string Value { get; set; }
+        public override string Value { get; set; }  
         [MaxLength(15), Column(TypeName = "varchar(15)")]
         [Required, DefaultValue("'127.0.0.1'")]
-        public string ClientIp { get; set; }
+        public string ClientIp { get; set; }  
 
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

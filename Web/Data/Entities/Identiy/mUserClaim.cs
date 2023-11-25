@@ -12,13 +12,13 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     {
 
         [Column(TypeName = "text")]
-        public override string ClaimType { get; set; }
+        public override string ClaimType { get; set; }  
         [Column(TypeName = "text")]
-        public override string ClaimValue { get; set; }
+        public override string ClaimValue { get; set; } 
 
         [MaxLength(15), Column(TypeName = "varchar(15)")]
         [Required, DefaultValue("'127.0.0.1'")]
-        public string ClientIp { get; set; }
+        public string ClientIp { get; set; } 
 
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

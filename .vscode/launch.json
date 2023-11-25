@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Web/bin/Debug/net8.0/DNMOFT.CostTrackr.WEB.dll",
+            "program": "${workspaceFolder}/Web/bin/Debug/net8.0/DNMOFT.CostTrackr.Web.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Web",
             "stopAtEntry": false,

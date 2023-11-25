@@ -2,7 +2,7 @@ version: "3.8"
 services:
   dbCostTrackr:
     restart: always
-    image: "postgis/postgis:13-3.1-alpine"
+    image: "postgis/postgis:16-3.4-alpine"
     container_name: dbCostTrackr
     env_file: "DB Server/db.env"
     ports: 

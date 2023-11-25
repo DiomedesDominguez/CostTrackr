@@ -11,8 +11,10 @@
 *.sln.docstates
 *.env
 
-# Custom connectionstrings
+# Custom settings
+appsettings.Development.json
 connectionstrings.json
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

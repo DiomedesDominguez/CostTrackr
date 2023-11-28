@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using DNMOFT.CostTrackr.Web.Data;
 using DNMOFT.CostTrackr.Web.Data.Entities.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
@@ -34,7 +36,11 @@ builder.Services.AddIdentity<mUser, mRole>(options => options.SignIn.RequireConf
 builder.Services.AddControllersWithViews();
 
 // Authentications
-builder.Services.AddAuthentication()
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = MicrosoftAccountDefaults.AuthenticationScheme;
+}).AddCookie()
     .AddMicrosoftAccount(msOptions =>
     {
         msOptions.ClientId = builder.Configuration["Authentication:Microsoft:ClientId"];

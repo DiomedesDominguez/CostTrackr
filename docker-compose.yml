@@ -21,6 +21,7 @@ services:
       - manager:/pgadmin4
       - lybraries:/var/lib/pgadmin
   dbCostTrackrMs:
+  # https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-deployment?view=sql-server-ver16&pivots=cs1-bash#production
     restart: always
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: dbCostTrackrMs

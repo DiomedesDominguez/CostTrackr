@@ -34,6 +34,9 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order = 0)]
         public long Id { get; set; }
+        [Column(Order = 1)]
+        public override long UserId { get ; set; }
+
         [ForeignKey("UserId")]
         public virtual mUser User { get; set; }
 

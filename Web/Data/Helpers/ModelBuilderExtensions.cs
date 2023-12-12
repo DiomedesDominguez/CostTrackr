@@ -29,10 +29,8 @@ namespace Microsoft.EntityFrameworkCore
 
         private static void SetDefaultValue(ModelBuilder modelBuilder, Type entityClass)
         {
-            foreach (var property in entityClass.GetProperties()
-                             .Where(p => p.PropertyType != typeof(DateTime) && p.CustomAttributes.Any(c => c.AttributeType == typeof(DefaultValueAttribute))))
+            foreach (var property in entityClass.GetProperties())
             {
-
                 if (property.Name == "Created")
                 {
                     modelBuilder.Entity(entityClass).Property(property.Name)
@@ -41,7 +39,7 @@ namespace Microsoft.EntityFrameworkCore
                 }
                 else if (property.Name == "LastUpdated")
                 {
-                    modelBuilder.Entity(entityClass).Property(property.Name).HasDefaultValue(DateTime.Now)
+                    modelBuilder.Entity(entityClass).Property(property.Name)
                     .HasDefaultValueSql("SYSDATETIME()")
                     .ValueGeneratedOnAddOrUpdate();
                 }

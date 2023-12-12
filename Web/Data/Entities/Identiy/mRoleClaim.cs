@@ -8,7 +8,7 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     using DNMOFT.CostTrackr.Web.Data.Interfaces;
     using Microsoft.AspNetCore.Identity;
     [Table("mRoleClaims")]
-    public class mRoleClaim : IdentityRoleClaim<long>
+    public class mRoleClaim : IdentityRoleClaim<long>, IDisposable
     {
 
         [Column(TypeName = "text")]
@@ -31,6 +31,7 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
 
         [Required, DefaultValue(1)]
         public long LastUpdatedBy { get; set; }
+
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)

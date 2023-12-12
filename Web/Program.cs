@@ -4,9 +4,7 @@ using DNMOFT.CostTrackr.Web.Data;
 using DNMOFT.CostTrackr.Web.Data.Entities.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
-using Microsoft.AspNetCore.Authentication.AzureAD.UI;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
@@ -49,13 +47,21 @@ builder.Services.AddAuthentication(options =>
         msOptions.ClientId = builder.Configuration["Authentication:AzureAd:ClientId"];
         msOptions.ClientSecret = builder.Configuration["Authentication:AzureAd:ClientSecret"];
         msOptions.SaveTokens = true;
+    })
+    .AddGoogle(options =>
+    {
+        IConfigurationSection googleAuthNSection =
+            builder.Configuration.GetSection("Authentication:Google");
+
+        options.ClientId = googleAuthNSection["ClientId"];
+        options.ClientSecret = googleAuthNSection["ClientSecret"];
     });
 
 builder.Services.AddLogging(o =>
 {
     o.AddFilter("Microsoft", LogLevel.Debug)
            .AddFilter("System", LogLevel.Debug)
-           .AddFilter("YourAppName", LogLevel.Debug)
+           .AddFilter("CostTrackr", LogLevel.Debug)
            .AddConsole();
 });
 

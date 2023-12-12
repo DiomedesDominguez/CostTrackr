@@ -21,9 +21,7 @@ public class ApplicationDbContext : IdentityDbContext<mUser, mRole, long, mUserC
     public new DbSet<mRoleClaim> RoleClaims { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {        
-        //base.OnModelCreating(modelBuilder);
-       
+    {
         modelBuilder.SetDefaults();
     }
 }

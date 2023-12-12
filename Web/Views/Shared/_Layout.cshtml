@@ -1,41 +1,105 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DNMOFT.CostTrackr.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/DNMOFT.CostTrackr.Web.styles.css" asp-append-version="true" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>@ViewData["Title"] | CostTrackr</title>
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- ================== BEGIN core-css ================== -->
+    <link href="~/assets/css/vendor.min.css" rel="stylesheet" />
+    <link href="~/assets/css/facebook/app.min.css" rel="stylesheet" />
+    <!-- ================== END core-css ================== -->
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DNMOFT.CostTrackr.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+    <!-- BEGIN #header -->
+    <div id="header" class="app-header" data-bs-theme="dark">
+        <!-- BEGIN navbar-header -->
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">
+                <i class="fab fa-facebook-square fa-lg"></i>
+                <b>Cost</b>Trackr
+                <small>by DNMOFT</small>
+            </a>
+            <button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- END navbar-header -->
+        <!-- BEGIN header-nav -->
+        <div class="navbar-nav">
+            <div class="navbar-item navbar-form">
+                <form action="" method="POST" name="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter keyword" />
+                        <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <partial name="_LoginPartial" />
+        </div>
+        <!-- END header-nav -->
     </div>
+    <!-- END #header -->
+    <!-- BEGIN #sidebar -->
+    <div id="sidebar" class="app-sidebar">
+        <!-- BEGIN scrollbar -->
+        <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+            <!-- BEGIN menu -->
+            <div class="menu">
+                <div class="menu-header">Navigation</div>
+                <div class="menu-item has-sub">
+                    <a href="javascript:;" class="menu-link">
+                        <div class="menu-icon">
+                            <i class="fa fa-th-large"></i>
+                        </div>
+                        <div class="menu-text">Dashboard</div>
+                        <div class="menu-caret"></div>
+                    </a>
+                    <div class="menu-submenu">
+                        <div class="menu-item">
+                            <a href="index.html" class="menu-link">
+                                <div class="menu-text">Dashboard v1</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEGIN minify-button -->
+                <div class="menu-item d-flex">
+                    <a href="javascript:;" class="app-sidebar-minify-btn ms-auto" data-toggle="app-sidebar-minify"><i
+                            class="fa fa-angle-double-left"></i></a>
+                </div>
+                <!-- END minify-button -->
+            </div>
+            <!-- END menu -->
+        </div>
+        <!-- END scrollbar -->
+    </div>
+    <div class="app-sidebar-bg"></div>
+    <div class="app-sidebar-mobile-backdrop">
+        <a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a>
+    </div>
+    <!-- END #sidebar -->
+        <!-- BEGIN #content -->
+    <div id="content" class="app-content">
+      <!-- BEGIN breadcrumb -->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
+        <li class="breadcrumb-item active">Blank Page</li>
+      </ol>
+      <!-- END breadcrumb -->
+      <!-- BEGIN page-header -->
+      <h1 class="page-header">Blank Page <small>header small text goes here...</small></h1>
+      <!-- END page-header -->
+      @RenderBody()
+    </div>
+    <!-- END #content -->
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -47,4 +111,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

@@ -14,7 +14,7 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
     public class mUser : IdentityUser<long>
     {
         [Column(TypeName = "text")]
-        public override string ConcurrencyStamp { get; set; } 
+        public override string ConcurrencyStamp { get; set; } = Guid.NewGuid().ToString();
         [Column(TypeName = "varchar(128)")]
         public override string Email { get; set; } 
         [Column(TypeName = "varchar(128)")]
@@ -44,6 +44,13 @@ namespace DNMOFT.CostTrackr.Web.Data.Entities.Identity
         [DefaultValue(1)]
         public long LastUpdatedBy { get; set; }
         private bool disposed = false;
+
+        public mUser()
+        {
+            PasswordHash = string.Empty;
+            PhoneNumber = string.Empty;
+            SecurityStamp = string.Empty;            
+        }
 
         protected virtual void Dispose(bool disposing)
         {

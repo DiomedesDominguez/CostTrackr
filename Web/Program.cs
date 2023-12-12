@@ -4,6 +4,9 @@ using DNMOFT.CostTrackr.Web.Data;
 using DNMOFT.CostTrackr.Web.Data.Entities.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.MicrosoftAccount;
+using Microsoft.AspNetCore.Authentication.AzureAD.UI;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
@@ -43,11 +46,18 @@ builder.Services.AddAuthentication(options =>
 }).AddCookie()
     .AddMicrosoftAccount(msOptions =>
     {
-        msOptions.ClientId = builder.Configuration["Authentication:Microsoft:ClientId"];
-        msOptions.ClientSecret = builder.Configuration["Authentication:Microsoft:ClientSecret"];
-        msOptions.CallbackPath = "/Home/Index";
-
+        msOptions.ClientId = builder.Configuration["Authentication:AzureAd:ClientId"];
+        msOptions.ClientSecret = builder.Configuration["Authentication:AzureAd:ClientSecret"];
+        msOptions.SaveTokens = true;
     });
+
+builder.Services.AddLogging(o =>
+{
+    o.AddFilter("Microsoft", LogLevel.Debug)
+           .AddFilter("System", LogLevel.Debug)
+           .AddFilter("YourAppName", LogLevel.Debug)
+           .AddConsole();
+});
 
 var app = builder.Build();
 

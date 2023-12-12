@@ -35,11 +35,15 @@ namespace Microsoft.EntityFrameworkCore
 
                 if (property.Name == "Created")
                 {
-                    modelBuilder.Entity(entityClass).Property(property.Name).HasDefaultValueSql("CURRENT_TIMESTAMP").ValueGeneratedOnAdd();
+                    modelBuilder.Entity(entityClass).Property(property.Name)
+                    .HasDefaultValueSql("SYSDATETIME()")
+                    .ValueGeneratedOnAdd();
                 }
                 else if (property.Name == "LastUpdated")
                 {
-                    modelBuilder.Entity(entityClass).Property(property.Name).HasDefaultValue(DateTime.Now).HasDefaultValueSql("CURRENT_TIMESTAMP").ValueGeneratedOnAddOrUpdate();
+                    modelBuilder.Entity(entityClass).Property(property.Name).HasDefaultValue(DateTime.Now)
+                    .HasDefaultValueSql("SYSDATETIME()")
+                    .ValueGeneratedOnAddOrUpdate();
                 }
                 else
                 {

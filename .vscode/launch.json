@@ -14,16 +14,29 @@
             "args": [],
             "cwd": "${workspaceFolder}/Web",
             "stopAtEntry": false,
-            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
-            "serverReadyAction": {
-                "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
-            },
+
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
+            },
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": ["/C", "start", "microsoft-edge:%s"]
+                },
+                "linux": {
+                    "command": "/usr/bin/xdg-open",
+                    "args": ["%s"]
+                },
+                "osx": {
+                    "command": "open",
+                    "args": ["-a", "/Applications/Microsoft Edge.app", "%s"]
+                }
             }
         },
         {

@@ -1,5 +1,5 @@
 Create a custom connectionstrings.json file
 
-Database first.
+Database first. N-Layer, monolith
 
-No internal user, only third party.
+Must be able to work offline 100%

@@ -20,16 +20,16 @@ services:
     volumes:
       - manager:/pgadmin4
       - lybraries:/var/lib/pgadmin
-  dbCostTrackrMs:
-  # https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-deployment?view=sql-server-ver16&pivots=cs1-bash#production
-    restart: always
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: dbCostTrackrMs
-    env_file: "DB Server/msdb.env"
-    ports:
-      - 36020:1433
-    volumes:
-      - sqlserver_data:/var/opt/mssql
+  # dbCostTrackrMs:
+  # # https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-deployment?view=sql-server-ver16&pivots=cs1-bash#production
+  #   restart: always
+  #   image: mcr.microsoft.com/mssql/server:2022-latest
+  #   container_name: dbCostTrackrMs
+  #   env_file: "DB Server/msdb.env"
+  #   ports:
+  #     - 36020:1433
+  #   volumes:
+  #     - sqlserver_data:/var/opt/mssql
   # CostTrackrWeb:
   #   restart: always
   #   container_name: CostTrackr
@@ -44,6 +44,6 @@ services:
 volumes:
   myapp:
   postgre_data:
-  sqlserver_data:
+  # sqlserver_data:
   manager:
   lybraries:

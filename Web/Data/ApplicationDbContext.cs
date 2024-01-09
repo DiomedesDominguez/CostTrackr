@@ -9,4 +9,12 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public long UserId { get; set; }
+
+    public override int SaveChanges()
+    {
+        
+        return base.SaveChanges();
+    }
 }

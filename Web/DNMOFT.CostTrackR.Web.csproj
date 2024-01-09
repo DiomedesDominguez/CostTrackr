@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-DNMOFT.CostTrackR.Web-41190fc1-898f-4c60-afbf-43437a5e6f85</UserSecretsId>
+    <UserSecretsId>DNMOFT.CostTrackR.Web</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

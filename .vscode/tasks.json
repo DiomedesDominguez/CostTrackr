@@ -7,23 +7,9 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Web/DNMOFT.CostTrackr.Web.csproj",
+                "${workspaceFolder}/Web/DNMOFT.CostTrackR.Web.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build postgre",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Web/DNMOFT.CostTrackr.Web.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary",
-                "-c",
-                "PostgreDebug"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -33,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Web/DNMOFT.CostTrackr.Web.csproj",
+                "${workspaceFolder}/Web/DNMOFT.CostTrackR.Web.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -47,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/Web/DNMOFT.CostTrackr.Web.csproj"
+                "${workspaceFolder}/Web/DNMOFT.CostTrackR.Web.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build debug",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Web/bin/Debug/net8.0/DNMOFT.CostTrackr.Web.dll",
+            "program": "${workspaceFolder}/Web/bin/Debug/net8.0/DNMOFT.CostTrackR.Web.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Web",
             "stopAtEntry": false,
@@ -24,19 +24,7 @@
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
-                "uriFormat": "%s",
-                "windows": {
-                    "command": "cmd.exe",
-                    "args": ["/C", "start", "microsoft-edge:%s"]
-                },
-                "linux": {
-                    "command": "/usr/bin/xdg-open",
-                    "args": ["%s"]
-                },
-                "osx": {
-                    "command": "open",
-                    "args": ["-a", "/Applications/Microsoft Edge.app", "%s"]
-                }
+                "uriFormat": "%s"
             }
         },
         {

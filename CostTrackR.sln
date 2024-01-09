@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNMOFT.CostTrackR.BusinessRules", "BusinessRules\DNMOFT.CostTrackR.BusinessRules.csproj", "{F809A41E-6028-4DB5-B5B1-4F0FA67E7A36}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNMOFT.CostTrackR.Web", "Web\DNMOFT.CostTrackR.Web.csproj", "{8C4F9986-2B1C-4608-8F69-96171B12FBD6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNMOFT.CostTrackR.DataAccess", "DataAccess\DNMOFT.CostTrackR.DataAccess.csproj", "{193EFCF8-F827-4B04-BD59-125E485FD979}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNMOFT.CostTrackR.Repositories", "Repositories\DNMOFT.CostTrackR.Repositories.csproj", "{D654FD82-6C01-4C52-A0B5-1E36B6B7C3BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNMOFT.CostTrackR.ViewModels", "ViewModels\DNMOFT.CostTrackR.ViewModels.csproj", "{1165729A-CDA2-4FAD-9113-0AD2AC074EE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,26 +13,10 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F809A41E-6028-4DB5-B5B1-4F0FA67E7A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F809A41E-6028-4DB5-B5B1-4F0FA67E7A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F809A41E-6028-4DB5-B5B1-4F0FA67E7A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F809A41E-6028-4DB5-B5B1-4F0FA67E7A36}.Release|Any CPU.Build.0 = Release|Any CPU
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution		
 		{8C4F9986-2B1C-4608-8F69-96171B12FBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C4F9986-2B1C-4608-8F69-96171B12FBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C4F9986-2B1C-4608-8F69-96171B12FBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C4F9986-2B1C-4608-8F69-96171B12FBD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{193EFCF8-F827-4B04-BD59-125E485FD979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{193EFCF8-F827-4B04-BD59-125E485FD979}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{193EFCF8-F827-4B04-BD59-125E485FD979}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{193EFCF8-F827-4B04-BD59-125E485FD979}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D654FD82-6C01-4C52-A0B5-1E36B6B7C3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D654FD82-6C01-4C52-A0B5-1E36B6B7C3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D654FD82-6C01-4C52-A0B5-1E36B6B7C3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D654FD82-6C01-4C52-A0B5-1E36B6B7C3BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1165729A-CDA2-4FAD-9113-0AD2AC074EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1165729A-CDA2-4FAD-9113-0AD2AC074EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1165729A-CDA2-4FAD-9113-0AD2AC074EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1165729A-CDA2-4FAD-9113-0AD2AC074EE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

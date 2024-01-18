@@ -1,146 +1,172 @@
-<mxfile host="app.diagrams.net" modified="2024-01-08T23:38:10.338Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="j4r0t2siwjuADQid-wc4" version="22.1.17" type="device" pages="3">
-  <diagram name="Alto nivel 1" id="QOwvAshCNw6KJFEe94Fh">
-    <mxGraphModel dx="1434" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="3FAK0_pdbmqBc82ofbws-1" target="EJrhcuu_lTTGbEYJ--3x-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="3FAK0_pdbmqBc82ofbws-1" value="CostTrackr - Admin" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" parent="1" vertex="1">
-          <mxGeometry x="270" y="350" width="64" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-1" value="dbCostTrackr" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server.svg;" vertex="1" parent="1">
-          <mxGeometry x="470" y="400" width="48" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-7" value="Identity Providers" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="225" y="40" width="200" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-8" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google" vertex="1" parent="EJrhcuu_lTTGbEYJ--3x-7">
-          <mxGeometry x="18" y="40" width="37.58" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-9" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/social-media-2068/64/_windows-128.png" vertex="1" parent="EJrhcuu_lTTGbEYJ--3x-7">
-          <mxGeometry x="85" y="40" width="40" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-10" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-128.png" vertex="1" parent="EJrhcuu_lTTGbEYJ--3x-7">
-          <mxGeometry x="145" y="35" width="50" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-11" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" vertex="1" parent="EJrhcuu_lTTGbEYJ--3x-7">
-          <mxGeometry x="16.79000000000002" y="110" width="40" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.484;entryY=-0.016;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="EJrhcuu_lTTGbEYJ--3x-7" target="3FAK0_pdbmqBc82ofbws-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-14" value="&lt;h1&gt;Escenario 1: Cloud Hosting&lt;/h1&gt;&lt;p&gt;Tener todo en la nube solamente, cada quien entre a la plataforma empleando sus actuales credenciales de sus redes sociales. Esto permitira mantener una capa de seguridad superior al no tener que implementar complejos sistemas de autenticacion de los usuarios.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="20" y="30" width="190" height="220" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-15" value="&lt;h1&gt;Base de datos centralizada&lt;/h1&gt;&lt;p&gt;Al no tener que recurrir en altos costos de licenciamiento, la base de datos en Postgres permitirá un rápido despliegue en ambientes contenerizados, asi como tambien pasar a otros motores de bases de datos como MS SQL &amp;amp; Oracle con pocos cambios a nivel de código.&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="400" y="510" width="290" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="EJrhcuu_lTTGbEYJ--3x-18" value="&lt;h1&gt;Portal administrativo&lt;/h1&gt;&lt;p&gt;CostTrackr es el nombre clave del proyecto y del portal administrativo para la gestion de los procesos comunes ERP.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="20" y="320" width="230" height="170" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram name="Alto nivel 2" id="R1U9hXK_b5MNfPagkvXg">
-    <mxGraphModel dx="1434" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-0" />
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-1" parent="ZD2-7gxJTRnpg8OXFp-J-0" />
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;startArrow=classic;startFill=1;" edge="1" parent="ZD2-7gxJTRnpg8OXFp-J-1" source="ZD2-7gxJTRnpg8OXFp-J-3" target="ZD2-7gxJTRnpg8OXFp-J-5">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-3" value="CostTrackr - Admin" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="ZD2-7gxJTRnpg8OXFp-J-1">
-          <mxGeometry x="270" y="350" width="64" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-5" value="dbCostTrackr" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server.svg;" vertex="1" parent="ZD2-7gxJTRnpg8OXFp-J-1">
-          <mxGeometry x="470" y="400" width="48" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-13" value="&lt;h1&gt;Escenario 2: Self Hosting&lt;/h1&gt;&lt;p&gt;Que la empresa-cliente descargue e instale todo como le de la gana. Los aspectos de seguridad pertinentes seran responsabilidad del cliente. Sera todo alojado a traves de docker en un computador separado, a manera de servidor, de preferencia un mini-pc provisto por mi o comprados por ellos con las características minimas recomendadas.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="ZD2-7gxJTRnpg8OXFp-J-1">
-          <mxGeometry x="160" y="70" width="340" height="143" as="geometry" />
-        </mxCell>
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-14" value="&lt;h1&gt;Base de datos centralizada&lt;/h1&gt;&lt;p&gt;Al no tener que recurrir en altos costos de licenciamiento, la base de datos en Postgres permitirá un rápido despliegue en ambientes contenerizados, asi como tambien pasar a otros motores de bases de datos como MS SQL &amp;amp; Oracle con pocos cambios a nivel de código.&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="ZD2-7gxJTRnpg8OXFp-J-1">
-          <mxGeometry x="400" y="510" width="290" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="ZD2-7gxJTRnpg8OXFp-J-16" value="&lt;h1&gt;Portal administrativo&lt;/h1&gt;&lt;p&gt;CostTrackr es el nombre clave del proyecto y del portal administrativo para la gestion de los procesos comunes ERP.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="ZD2-7gxJTRnpg8OXFp-J-1">
-          <mxGeometry x="20" y="320" width="230" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="9YrtDdUvYOwmdMfusR9P-0" value="&lt;h1&gt;Server Specs&lt;/h1&gt;&lt;p&gt;Minimo recomendable: 16GB de RAM, CPU Intel de 11va generacion o superior, 256 GB de almacenamiento SSD o superior, Tarjeta de red 1Gbps o superior.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="ZD2-7gxJTRnpg8OXFp-J-1">
-          <mxGeometry x="560" y="240" width="240" height="143" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="j8IG_koFH8kHWalYT82u" name="Admin - Granulado">
-    <mxGraphModel dx="1434" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-2" value="CostTrackr - Core" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="70" width="420" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-1" value="Reglas de negocio" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" vertex="1" parent="UgpRnadsdWjxiKwJwK6g-2">
-          <mxGeometry x="40" y="160" width="64" height="68" as="geometry" />
-        </mxCell>
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-3" value="Acceso a datos" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" vertex="1" parent="UgpRnadsdWjxiKwJwK6g-2">
-          <mxGeometry x="170" y="40" width="64" height="68" as="geometry" />
-        </mxCell>
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-4" value="ASP.NET MVC / WebApi" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="UgpRnadsdWjxiKwJwK6g-2">
-          <mxGeometry x="40" y="40" width="64" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-5" value="Gestor de reportes" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" vertex="1" parent="UgpRnadsdWjxiKwJwK6g-2">
-          <mxGeometry x="170" y="160" width="64" height="68" as="geometry" />
-        </mxCell>
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-6" value="Gestor de auditoria" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" vertex="1" parent="UgpRnadsdWjxiKwJwK6g-2">
-          <mxGeometry x="300" y="40" width="64" height="68" as="geometry" />
-        </mxCell>
-        <mxCell id="UgpRnadsdWjxiKwJwK6g-7" value="Gestor de archivos" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" vertex="1" parent="UgpRnadsdWjxiKwJwK6g-2">
-          <mxGeometry x="290" y="160" width="64" height="68" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-1" value="CostTrackr - Web" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="70" y="410" width="650" height="380" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-2" value="Clientes" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="40" y="40" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-3" value="Tipos de clientes" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="140" y="40" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-4" value="Tipo de productos" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="250" y="40" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-5" value="Productos" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="350" y="40" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-6" value="Proveedores" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="450" y="40" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-7" value="Tipo de proveedores" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="550" y="40" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-8" value="Ordenes de compra" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="40" y="150" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-9" value="Ordenes de venta" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="450" y="150" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-11" value="Ofertas de venta" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="140" y="150" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-12" value="Usuarios" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="250" y="150" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-13" value="Roles de usuarios" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="350" y="150" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-14" value="Sucursales" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="550" y="150" width="60" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="zp4Aq0fmerfITg_9EUUd-15" value="Reportes" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" vertex="1" parent="zp4Aq0fmerfITg_9EUUd-1">
-          <mxGeometry x="40" y="260" width="60" height="60" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e" pages="3">
+    <diagram name="Alto nivel 1" id="QOwvAshCNw6KJFEe94Fh">
+        <mxGraphModel dx="1055" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;startArrow=classic;startFill=1;" parent="1" source="3FAK0_pdbmqBc82ofbws-1" target="EJrhcuu_lTTGbEYJ--3x-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3FAK0_pdbmqBc82ofbws-1" value="CostTrackr - Admin" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="350" width="64" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-1" value="dbCostTrackr" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server.svg;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="400" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-7" value="Identity Providers" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="225" y="40" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-8" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google" parent="EJrhcuu_lTTGbEYJ--3x-7" vertex="1">
+                    <mxGeometry x="18" y="40" width="37.58" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-9" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/social-media-2068/64/_windows-128.png" parent="EJrhcuu_lTTGbEYJ--3x-7" vertex="1">
+                    <mxGeometry x="85" y="40" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-10" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-128.png" parent="EJrhcuu_lTTGbEYJ--3x-7" vertex="1">
+                    <mxGeometry x="145" y="35" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-11" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" parent="EJrhcuu_lTTGbEYJ--3x-7" vertex="1">
+                    <mxGeometry x="16.79000000000002" y="110" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.484;entryY=-0.016;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;startArrow=classic;startFill=1;" parent="1" source="EJrhcuu_lTTGbEYJ--3x-7" target="3FAK0_pdbmqBc82ofbws-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-14" value="&lt;h1&gt;Escenario 1: Cloud Hosting&lt;/h1&gt;&lt;p&gt;Tener todo en la nube solamente, cada quien entre a la plataforma empleando sus actuales credenciales de sus redes sociales. Esto permitira mantener una capa de seguridad superior al no tener que implementar complejos sistemas de autenticacion de los usuarios.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="30" width="190" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-15" value="&lt;h1&gt;Base de datos centralizada&lt;/h1&gt;&lt;p&gt;Al no tener que recurrir en altos costos de licenciamiento, la base de datos en Postgres permitirá un rápido despliegue en ambientes contenerizados, asi como tambien pasar a otros motores de bases de datos como MS SQL &amp;amp; Oracle con pocos cambios a nivel de código.&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="510" width="290" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="EJrhcuu_lTTGbEYJ--3x-18" value="&lt;h1&gt;Portal administrativo&lt;/h1&gt;&lt;p&gt;CostTrackr es el nombre clave del proyecto y del portal administrativo para la gestion de los procesos comunes ERP.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="320" width="230" height="170" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Alto nivel 2" id="R1U9hXK_b5MNfPagkvXg">
+        <mxGraphModel dx="1055" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-0"/>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-1" parent="ZD2-7gxJTRnpg8OXFp-J-0"/>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;startArrow=classic;startFill=1;" parent="ZD2-7gxJTRnpg8OXFp-J-1" source="ZD2-7gxJTRnpg8OXFp-J-3" target="ZD2-7gxJTRnpg8OXFp-J-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-3" value="CostTrackr - Admin" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" parent="ZD2-7gxJTRnpg8OXFp-J-1" vertex="1">
+                    <mxGeometry x="270" y="350" width="64" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-5" value="dbCostTrackr" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server.svg;" parent="ZD2-7gxJTRnpg8OXFp-J-1" vertex="1">
+                    <mxGeometry x="470" y="400" width="48" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-13" value="&lt;h1&gt;Escenario 2: Self Hosting&lt;/h1&gt;&lt;p&gt;Que la empresa-cliente descargue e instale todo como le de la gana. Los aspectos de seguridad pertinentes seran responsabilidad del cliente. Sera todo alojado a traves de docker en un computador separado, a manera de servidor, de preferencia un mini-pc provisto por mi o comprados por ellos con las características minimas recomendadas.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="ZD2-7gxJTRnpg8OXFp-J-1" vertex="1">
+                    <mxGeometry x="160" y="70" width="340" height="143" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-14" value="&lt;h1&gt;Base de datos centralizada&lt;/h1&gt;&lt;p&gt;Al no tener que recurrir en altos costos de licenciamiento, la base de datos en Postgres permitirá un rápido despliegue en ambientes contenerizados, asi como tambien pasar a otros motores de bases de datos como MS SQL &amp;amp; Oracle con pocos cambios a nivel de código.&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="ZD2-7gxJTRnpg8OXFp-J-1" vertex="1">
+                    <mxGeometry x="400" y="510" width="290" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZD2-7gxJTRnpg8OXFp-J-16" value="&lt;h1&gt;Portal administrativo&lt;/h1&gt;&lt;p&gt;CostTrackr es el nombre clave del proyecto y del portal administrativo para la gestion de los procesos comunes ERP.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="ZD2-7gxJTRnpg8OXFp-J-1" vertex="1">
+                    <mxGeometry x="20" y="320" width="230" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="9YrtDdUvYOwmdMfusR9P-0" value="&lt;h1&gt;Server Specs&lt;/h1&gt;&lt;p&gt;Minimo recomendable: 16GB de RAM, CPU Intel de 11va generacion o superior, 256 GB de almacenamiento SSD o superior, Tarjeta de red 1Gbps o superior.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="ZD2-7gxJTRnpg8OXFp-J-1" vertex="1">
+                    <mxGeometry x="560" y="240" width="240" height="143" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="j8IG_koFH8kHWalYT82u" name="Admin - Granulado">
+        <mxGraphModel dx="1055" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-2" value="CostTrackr - Core" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="70" width="420" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-1" value="Reglas de negocio" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" parent="UgpRnadsdWjxiKwJwK6g-2" vertex="1">
+                    <mxGeometry x="40" y="160" width="64" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-3" value="Acceso a datos" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" parent="UgpRnadsdWjxiKwJwK6g-2" vertex="1">
+                    <mxGeometry x="170" y="40" width="64" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-4" value="ASP.NET MVC / WebApi" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" parent="UgpRnadsdWjxiKwJwK6g-2" vertex="1">
+                    <mxGeometry x="40" y="40" width="64" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-5" value="Gestor de reportes" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" parent="UgpRnadsdWjxiKwJwK6g-2" vertex="1">
+                    <mxGeometry x="170" y="160" width="64" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-6" value="Gestor de auditoria" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" parent="UgpRnadsdWjxiKwJwK6g-2" vertex="1">
+                    <mxGeometry x="300" y="40" width="64" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="UgpRnadsdWjxiKwJwK6g-7" value="Gestor de archivos" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/App_Configuration.svg;" parent="UgpRnadsdWjxiKwJwK6g-2" vertex="1">
+                    <mxGeometry x="290" y="160" width="64" height="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-1" value="CostTrackr - Web" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="410" width="650" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-2" value="Clientes" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="40" y="40" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-3" value="Tipos de clientes" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="140" y="40" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-4" value="Tipo de productos" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="250" y="40" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-5" value="Productos" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="350" y="40" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-6" value="Proveedores" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="450" y="40" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-7" value="Tipo de proveedores" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="550" y="40" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-8" value="Ordenes de compra" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="40" y="150" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-9" value="Ordenes de venta" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="450" y="150" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-11" value="Ofertas de venta" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="140" y="150" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-12" value="Usuarios" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="250" y="150" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-13" value="Roles de usuarios" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="350" y="150" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-14" value="Sucursales" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="550" y="150" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="zp4Aq0fmerfITg_9EUUd-15" value="Reportes" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/management/process_management.svg;" parent="zp4Aq0fmerfITg_9EUUd-1" vertex="1">
+                    <mxGeometry x="40" y="260" width="60" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="0tNETEpl_NIvKAC4Wu1i" name="Funcionalidades">
+        <mxGraphModel dx="1055" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="ZuDvgYUZfJnlubfImKlF-3" value="Socios/Clientes" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="20" width="200" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZuDvgYUZfJnlubfImKlF-4" value="Datos Generales" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZuDvgYUZfJnlubfImKlF-3" vertex="1">
+                    <mxGeometry x="10" y="30" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZuDvgYUZfJnlubfImKlF-6" value="Facturas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZuDvgYUZfJnlubfImKlF-3" vertex="1">
+                    <mxGeometry x="10" y="70" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZuDvgYUZfJnlubfImKlF-7" value="Pedidos" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZuDvgYUZfJnlubfImKlF-3" vertex="1">
+                    <mxGeometry x="10" y="110" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZuDvgYUZfJnlubfImKlF-8" value="Presupuestos" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZuDvgYUZfJnlubfImKlF-3" vertex="1">
+                    <mxGeometry x="10" y="150" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="ZuDvgYUZfJnlubfImKlF-9" value="Devoluciones" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZuDvgYUZfJnlubfImKlF-3" vertex="1">
+                    <mxGeometry x="10" y="190" width="110" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>

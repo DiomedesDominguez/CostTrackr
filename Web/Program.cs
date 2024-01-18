@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile("sidebar.json", optional: true, reloadOnChange: true);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");

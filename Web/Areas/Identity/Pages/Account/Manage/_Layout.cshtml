@@ -1,0 +1,39 @@
+﻿@{	
+	if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+	{
+		Layout = (string)parentLayout;
+	}
+	else
+	{
+		Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+	}
+	
+	ViewData["AppSidebarNone"] = "true";
+	ViewData["AppHeaderNone"] = "true";
+	ViewData["AppBodyClass"] = "pace-top";
+	ViewData["AppContentClass"] = "p-0";
+	ViewData["AppClass"] = "app-without-sidebar app-without-header app-content-full-height";
+}
+
+<div class="container py-5">
+	<div class="row justify-content-center">
+		<div class="col-lg-8">
+			<div class="card">
+				<div class="card-header bg-none p-3">
+					<h4 class="mb-0"><i class="far fa-fw fa-user-circle fa-lg"></i> Manage your account <small class="fw-bold">Change your account settings</small></h4>
+				</div>
+				<div class="px-3 py-10px bg-gray-100">
+					<partial name="_ManageNav" />
+				</div>
+				<hr class="bg-gray-600 m-0" />
+				<div class="flex-1 p-3">
+					@RenderBody()
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

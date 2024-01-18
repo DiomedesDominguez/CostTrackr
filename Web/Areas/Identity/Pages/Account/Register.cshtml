@@ -1,0 +1,75 @@
+@page
+@model RegisterModel
+@{
+	ViewData["Title"] = "Register";
+	ViewData["AppSidebarNone"] = "true";
+	ViewData["AppHeaderNone"] = "true";
+	ViewData["AppBodyClass"] = "pace-top";
+	ViewData["AppContentClass"] = "p-0";
+	ViewData["AppClass"] = "app-without-sidebar app-without-header app-content-full-height";
+}
+
+<div class="vh-100 d-flex align-items-center">
+	<div class="container-sm p-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-6">
+				<h1 class="text-center">@ViewData["Title"]</h1>
+				<h6 class="text-center text-gray-600 lh-15">Create a new account.</h6>
+				<form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+					<div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
+					<div class="mb-3">
+						<div><label asp-for="Input.Email" for="email" class="form-label"></label> <span class="text-danger">*</span></div>
+						<input asp-for="Input.Email" id="email" class="form-control form-control-lg py-10px fs-13px" placeholder="e.g username@address.com" />
+						<div class="mt-1"><span asp-validation-for="Input.Email" class="text-danger-700 fw-bold"></span></div>
+					</div>
+					<div class="mb-3">
+						<div><label asp-for="Input.Password" class="form-label"></label> <span class="text-danger">*</span></div>
+						<input asp-for="Input.Password" class="form-control form-control-lg py-10px fs-13px" />
+						<div class="mt-1"><span asp-validation-for="Input.Password" class="text-danger-700 fw-bold"></span></div>
+					</div>
+					<div class="mb-3">
+						<div><label asp-for="Input.ConfirmPassword" class="form-label"></label> <span class="text-danger">*</span></div>
+						<input asp-for="Input.ConfirmPassword" class="form-control form-control-lg py-10px fs-13px" />
+						<div class="mt-1"><span asp-validation-for="Input.ConfirmPassword" class="text-danger-700 fw-bold"></span></div>
+					</div>
+					<button type="submit" class="btn btn-primary d-block btn-lg w-100 mb-3 py-10px">Register</button>
+					<div class="text-muted text-center fw-bold">
+						Already have an Admin ID? <a href="/Identity/Account/Login">Login</a>
+					</div>
+				</form>
+				<hr class="my-4 bg-gray-500" />
+				<section>
+					<b>Use another service to register.</b>
+					@{
+						if ((Model.ExternalLogins?.Count ?? 0) == 0)
+							{
+								<div>
+									<p>
+										There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+										for details on setting up this ASP.NET application to support logging in via external services.
+									</p>
+								</div>
+							}
+							else
+							{
+								<form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+									<div>
+										<p>
+											@foreach (var provider in Model.ExternalLogins)
+											{
+												<button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+											}
+										</p>
+									</div>
+								</form>
+							}
+						}
+				</section>
+			</div>
+		</div>
+</div>
+</div>
+
+@section Scripts {
+  <partial name="_ValidationScriptsPartial" />
+}

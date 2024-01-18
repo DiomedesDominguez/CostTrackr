@@ -1,0 +1,20 @@
+@inject SignInManager<IdentityUser> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+<ul class="nav nav-pills">
+    <li class="nav-item me-1"><a class="nav-link py-2 @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index"><i class="fa fa-fw fa-user-circle me-1 ms-n1"></i> Profile</a></li>
+    <li class="nav-item me-1"><a class="nav-link py-2 @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email"><i class="fa fa-fw fa-envelope me-1 ms-n1"></i> Email</a></li>
+    <li class="nav-item me-1"><a class="nav-link py-2 @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword"><i class="fa fa-fw fa-key me-1 ms-n1"></i> Password</a></li>
+    @if (hasExternalLogins)
+    {
+      <li id="external-logins" class="nav-item me-1"><a id="external-login" class="nav-link py-2 @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins"><i class="fa fa-fw fa-lock me-1 ms-n1"></i> External logins</a></li>
+    }
+    <li class="nav-item me-1"><a class="nav-link py-2 @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" id="two-factor" asp-page="./TwoFactorAuthentication"><i class="fa fa-fw fa-shield-virus me-1 ms-n1"></i> Two-factor authentication</a></li>
+    <li class="nav-item me-1"><a class="nav-link py-2 @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData"><i class="fa fa-fw fa-database me-1 ms-n1"></i> Personal data</a></li>
+    <li class="nav-item me-1">
+    	<form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+        <button type="submit" class="nav-link py-2"><i class="fa fa-fw fa-sign-out-alt me-1 ms-n1"></i> Log Out</button>
+      </form>
+    </li>
+</ul>

@@ -1,0 +1,51 @@
+﻿@page
+@model LogoutModel
+@{
+  ViewData["Title"] = "Log out";
+	ViewData["AppSidebarNone"] = "true";
+	ViewData["AppHeaderNone"] = "true";
+	ViewData["AppBodyClass"] = "pace-top";
+	ViewData["AppContentClass"] = "p-0";
+	ViewData["AppClass"] = "app-without-sidebar app-without-header app-content-full-height";
+}
+
+<header>
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+            </form>
+        }
+        else
+        {
+            <p>You have successfully logged out of the application.</p>
+        }
+    }
+</header>
+
+
+<div class="vh-100 d-flex align-items-center">
+	<div class="container-sm p-5 mb-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-6 col-md-6">
+				<h2 class="text-center">@ViewData["Title"]</h2>
+				<h6 class="text-center text-gray-600 lh-15 mb-5 pb-5">
+					@{
+						if (User.Identity.IsAuthenticated)
+						{
+							<form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+								<button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+							</form>
+						}
+						else
+						{
+							<p>You have successfully logged out of the application.</p>
+						}
+					}
+				</h6>
+			</div>
+		</div>
+	</div>
+</div>

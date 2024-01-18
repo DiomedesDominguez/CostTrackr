@@ -1,0 +1,34 @@
+@page
+@model ResendEmailConfirmationModel
+@{
+  ViewData["Title"] = "Resend email confirmation";  
+	ViewData["AppSidebarNone"] = "true";
+	ViewData["AppHeaderNone"] = "true";
+	ViewData["AppBodyClass"] = "pace-top";
+	ViewData["AppContentClass"] = "p-0";
+	ViewData["AppClass"] = "app-without-sidebar app-without-header app-content-full-height";
+}
+
+<div class="vh-100 d-flex align-items-center">
+	<div class="container-sm p-5 mb-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-6">
+				<h2 class="text-center">@ViewData["Title"]</h2>
+				<h6 class="text-center text-gray-600 lh-15">Enter your email. We'll email instructions on how to reset your password.</h6>
+				<form method="post">
+          <div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
+					<div class="mb-3">
+						<div><label asp-for="Input.Email" class="form-label"></label> <span class="text-danger">*</span></div>
+						<input asp-for="Input.Email" class="form-control form-control-lg py-10px fs-13px" />
+						<div class="mt-1"><span asp-validation-for="Input.Email" class="text-danger"></span></div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block w-100 btn-lg mb-5">Resend</button>
+        </form>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

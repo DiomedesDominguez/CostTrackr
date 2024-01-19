@@ -14,9 +14,7 @@
 
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
-	<!-- BEGIN login -->
 	<div class="login login-with-news-feed">
-		<!-- BEGIN news-feed -->
 		<div class="news-feed">
 			<div class="news-image" style="background-image: url(/img/login-bg/login-bg-@(randomBg).jpg)"></div>
 			<div class="news-caption">
@@ -26,17 +24,11 @@
 				</p>
 			</div>
 		</div>
-		<!-- END news-feed -->
-
-		<!-- BEGIN login-container -->
 		<div class="login-container">
-			<!-- BEGIN login-header -->
 			<div class="login-header mb-30px">
 				<div class="brand">
 					<div class="d-flex align-items-center">
 						<span class="logo"></span>
-
-
 						<b>CostTrackR</b> Admin
 					</div>
 					<small>Acceder a la plataforma</small>
@@ -45,15 +37,12 @@
 					<i class="fa fa-sign-in-alt"></i>
 				</div>
 			</div>
-			<!-- END login-header -->
-
-			<!-- BEGIN login-content -->
 			<div class="login-content">
 				<form id="account" asp-route-returnUrl="@Model.ReturnUrl" method="post">
 					<div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
 					<div class="mb-3">
 						<div><label asp-for="Input.Email" for="email" class="form-label"></label> <span class="text-danger">*</span></div>
-						<input asp-for="Input.Email" id="email" class="form-control form-control-lg py-10px fs-13px" placeholder="e.g username@address.com" />
+						<input asp-for="Input.Email" id="email" class="form-control form-control-lg py-10px fs-13px" placeholder="ejemplo usuario@dominio.com" />
 						<div class="mt-1"><span asp-validation-for="Input.Email" class="text-danger-700 fw-bold"></span></div>
 					</div>
 					<div class="mb-3">
@@ -70,20 +59,21 @@
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary d-block btn-lg w-100 mb-3 py-10px">Acceder</button>
-					
 					<div class="row">
-						<div class="col-6">
+						<div class="text-muted text-center fw-bold">
+						¿Aún sin cuenta? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrar</a>
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-7">
 							<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar correo de confirmacion</a>
 						</div>
-						<div class="col-6 text-end">
+						<div class="col-5 text-end">
 							<a id="forgot-password" asp-page="./ForgotPassword">¿Olvidó la contraseña?</a>
 						</div>
 					</div>
 				</form>
 			</div>
-			<!-- END login-content -->
 		</div>
-		<!-- END login-container -->
 	</div>
-	<!-- END login -->
 }

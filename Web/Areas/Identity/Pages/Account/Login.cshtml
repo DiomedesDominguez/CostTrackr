@@ -2,21 +2,53 @@
 @model LoginModel
 
 @{
-	ViewData["Title"] = "Log in";
-	ViewData["AppSidebarNone"] = "true";
-	ViewData["AppHeaderNone"] = "true";
+	ViewData["Title"] = "Acceder";
+	ViewData["AppSidebarNone"] = "false";
+	ViewData["AppHeaderNone"] = "false";
+	ViewData["AppThemePanel"] = "false";
 	ViewData["AppBodyClass"] = "pace-top";
 	ViewData["AppContentClass"] = "p-0";
-	ViewData["AppClass"] = "app-without-sidebar app-without-header app-content-full-height";
+	ViewData["AppClass"] = "";
+	var randomBg = new Random().Next(1, 19);
 }
 
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	<!-- BEGIN login -->
+	<div class="login login-with-news-feed">
+		<!-- BEGIN news-feed -->
+		<div class="news-feed">
+			<div class="news-image" style="background-image: url(/img/login-bg/login-bg-@(randomBg).jpg)"></div>
+			<div class="news-caption">
+				<h4 class="caption-title"><b>CostTrackR</b> Admin App</h4>
+				<p>
+					Además de web también es compatible con plataformas iPhone®, iPad® & Android™.
+				</p>
+			</div>
+		</div>
+		<!-- END news-feed -->
 
-<div class="vh-100 d-flex align-items-center">
-	<div class="container-sm p-5">
-		<div class="row justify-content-center">
-			<div class="col-lg-4 col-md-6">
-				<h1 class="text-center">@ViewData["Title"]</h1>
-				<h6 class="text-center text-gray-600">Use a local account to log in.</h6>
+		<!-- BEGIN login-container -->
+		<div class="login-container">
+			<!-- BEGIN login-header -->
+			<div class="login-header mb-30px">
+				<div class="brand">
+					<div class="d-flex align-items-center">
+						<span class="logo"></span>
+
+
+						<b>CostTrackR</b> Admin
+					</div>
+					<small>Acceder a la plataforma</small>
+				</div>
+				<div class="icon">
+					<i class="fa fa-sign-in-alt"></i>
+				</div>
+			</div>
+			<!-- END login-header -->
+
+			<!-- BEGIN login-content -->
+			<div class="login-content">
 				<form id="account" asp-route-returnUrl="@Model.ReturnUrl" method="post">
 					<div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
 					<div class="mb-3">
@@ -37,52 +69,21 @@
 							</label>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary d-block btn-lg w-100 mb-3 py-10px">Log in</button>
-					<div class="text-muted text-center fw-bold mb-3">
-						Don't have an account yet? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register</a>
-					</div>
+					<button type="submit" class="btn btn-primary d-block btn-lg w-100 mb-3 py-10px">Acceder</button>
+					
 					<div class="row">
 						<div class="col-6">
-							<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+							<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar correo de confirmacion</a>
 						</div>
 						<div class="col-6 text-end">
-							<a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+							<a id="forgot-password" asp-page="./ForgotPassword">¿Olvidó la contraseña?</a>
 						</div>
 					</div>
 				</form>
-				<hr class="my-4 bg-gray-500" />
-				<section>
-					<b>Use another service to register.</b>
-					@{
-						if ((Model.ExternalLogins?.Count ?? 0) == 0)
-							{
-								<div>
-									<p>
-										There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-										for details on setting up this ASP.NET application to support logging in via external services.
-									</p>
-								</div>
-							}
-							else
-							{
-								<form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-									<div>
-										<p>
-											@foreach (var provider in Model.ExternalLogins)
-											{
-												<button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-											}
-										</p>
-									</div>
-								</form>
-							}
-						}
-				</section>
 			</div>
+			<!-- END login-content -->
 		</div>
+		<!-- END login-container -->
 	</div>
-</div>
-
-@section Scripts {
-  <partial name="_ValidationScriptsPartial" />
+	<!-- END login -->
 }

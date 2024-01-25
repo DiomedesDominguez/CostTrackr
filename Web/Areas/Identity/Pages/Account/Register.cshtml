@@ -25,46 +25,51 @@
 			<small class="d-block fs-15px lh-16">Crea tu cuenta CostTrackR.</small>
 		</div>
 		<div class="register-content">
-			<form action="index.html" method="GET" class="fs-13px">
+			<form id="account" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="fs-13px">
+				<div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
 				<div class="mb-3">
-					<label class="mb-2">Name <span class="text-danger">*</span></label>
+					<label asp-for="Input.Name" for="name" class="mb-2"></label> <span class="text-danger">*</span>
 					<div class="row gx-3">
 						<div class="col-md-6 mb-2 mb-md-0">
-							<input type="text" class="form-control fs-13px" placeholder="First name" />
+							<input asp-for="Input.Name" id="name" class="form-control fs-13px" placeholder="Nombre(s)" />
+							<span asp-validation-for="Input.Name" class="text-danger-700 fw-bold"></span>
 						</div>
 						<div class="col-md-6">
-							<input type="text" class="form-control fs-13px" placeholder="Last name" />
+							<input asp-for="Input.LastName" id="lastname" class="form-control fs-13px" placeholder="Apellido(s)" />
+							<span asp-validation-for="Input.LastName" class="text-danger-700 fw-bold"></span>
 						</div>
 					</div>
 				</div>
 				<div class="mb-3">
-					<label class="mb-2">Email <span class="text-danger">*</span></label>
-					<input type="text" class="form-control fs-13px" placeholder="Email address" />
-				</div>
-				<div class="mb-3">
-					<label class="mb-2">Re-enter Email <span class="text-danger">*</span></label>
-					<input type="text" class="form-control fs-13px" placeholder="Re-enter email address" />
+					<label asp-for="Input.Email" for="email" class="mb-2"></label> <span class="text-danger">*</span>
+					<input asp-for="Input.Email" id="email" class="form-control fs-13px" placeholder="ejemplo usuario@dominio.com" />
+					<span asp-validation-for="Input.Email" class="text-danger-700 fw-bold"></span>
 				</div>
 				<div class="mb-4">
-					<label class="mb-2">Password <span class="text-danger">*</span></label>
-					<input type="password" class="form-control fs-13px" placeholder="Password" />
+					<label asp-for="Input.Password" for="paswword" class="mb-2"></label> <span class="text-danger">*</span>
+					<input asp-for="Input.Password" id="password" class="form-control fs-13px" />
+					<span asp-validation-for="Input.Password" class="text-danger-700 fw-bold"></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="Input.ConfirmPassword" for="confirmpassword" class="mb-2"></label> <span class="text-danger">*</span>
+					<input asp-for="Input.ConfirmPassword" id="confirmpassword" class="form-control fs-13px" />
+					<span asp-validation-for="Input.ConfirmPassword" class="text-danger-700 fw-bold"></span>
 				</div>
 				<div class="form-check mb-4">
 					<input class="form-check-input" type="checkbox" value="" id="agreementCheckbox" />
 					<label class="form-check-label" for="agreementCheckbox">
-						By clicking Sign Up, you agree to our <a href="javascript:;">Terms</a> and that you have read
-						our <a href="javascript:;">Data Policy</a>, including our <a href="javascript:;">Cookie Use</a>.
+						Al hacer clic en Registrarse, acepta nuestros  <a href="javascript:;">Términos</a> y que ha leído nuestra <a href="javascript:;">Política de datos</a>, incluido nuestro <a href="javascript:;">Uso de cookies</a>.
 					</label>
 				</div>
 				<div class="mb-4">
-					<button type="submit" class="btn btn-theme d-block w-100 btn-lg h-45px fs-13px">Sign Up</button>
+					<button type="submit" class="btn btn-theme d-block w-100 btn-lg h-45px fs-13px">Registrarse</button>
 				</div>
 				<div class="mb-4 pb-5">
-					Already a member? Click <a href="login_v3.html">here</a> to login.
+					¿Ya es miembro? Click <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">aquí</a> para acceder.
 				</div>
 				<hr class="bg-gray-600 opacity-2" />
 				<p class="text-center text-gray-600">
-					&copy; Color Admin All Right Reserved 2023
+					&copy; CostTrackR Todos los derechos reservados @DateTime.Now.Year
 				</p>
 			</form>
 		</div>

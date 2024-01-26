@@ -14,9 +14,13 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
     public class mUserClaim: IdentityUserClaim<long>
     {
          [Column(TypeName = "text")]
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override string ClaimType { get; set; }  
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         [Column(TypeName = "text")]
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override string ClaimValue { get; set; } 
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
 
         [MaxLength(15), Column(TypeName = "varchar(15)")]
         [Required, DefaultValue("'127.0.0.1'")]
@@ -31,5 +35,10 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
         public DateTime LastUpdated { get; set; }
         [DefaultValue(1)]
         public long LastUpdatedBy { get; set; }
+
+        public mUserClaim()
+        {
+            ClaimType = string.Empty;
+        }
     }
 }

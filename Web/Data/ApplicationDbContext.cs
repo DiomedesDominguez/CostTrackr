@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using DNMOFT.CostTrackR.Web.Data.Entities.Identity;
+using DNMOFT.CostTrackR.Web.Data.Helpers;
 
 namespace DNMOFT.CostTrackR.Web.Data;
 
@@ -23,5 +24,11 @@ public class ApplicationDbContext : IdentityDbContext<mUser, mRole, long, mUserC
     {
         
         return base.SaveChanges();
+    }
+
+    override protected void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.SetDefaults();
     }
 }

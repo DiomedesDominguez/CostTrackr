@@ -11,11 +11,17 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
     public class mRole: IdentityRole<long>
     {
         [Column(TypeName = "text")]
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override string ConcurrencyStamp { get; set; } 
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         [Column(TypeName = "varchar(256)")]
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override string Name { get; set; } 
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         [Column(TypeName = "varchar(256)"), MaxLength(256)]
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override string NormalizedName { get; set; } 
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
 
         #region Base Properties
         [Key]

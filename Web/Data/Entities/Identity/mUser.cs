@@ -43,6 +43,9 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
         public override string UserName { get; set; }
 #pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         
+public string Name { get; set; }
+public string LastName { get; set; }
+
         #region Base Properties
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -24,7 +24,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "character varying(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "0"),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1")
                 },
@@ -50,7 +50,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "character varying(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "0"),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
                     EmailConfirmed = table.Column<bool>(type: "boolean", nullable: false),
@@ -76,7 +76,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
                     RoleId = table.Column<long>(type: "bigint", nullable: false)
@@ -103,7 +103,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
                     UserId = table.Column<long>(type: "bigint", nullable: false)
@@ -131,7 +131,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
                     ProviderKeyET = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -159,7 +159,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1")
                 },
@@ -193,7 +193,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     ClientIp = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false, defaultValueSql: "'127.0.0.1'"),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     CreatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1"),
-                    RecordState = table.Column<byte>(type: "smallint", nullable: false),
+                    RecordState = table.Column<byte>(type: "smallint", nullable: false, defaultValueSql: "1"),
                     LastUpdated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
                     LastUpdatedBy = table.Column<long>(type: "bigint", nullable: false, defaultValueSql: "1")
                 },

@@ -79,7 +79,7 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     b.Property<byte>("RecordState")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("smallint")
-                        .HasDefaultValueSql("0");
+                        .HasDefaultValueSql("1");
 
                     b.HasKey("Id");
 
@@ -134,7 +134,8 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                         .HasDefaultValueSql("1");
 
                     b.Property<byte>("RecordState")
-                        .HasColumnType("smallint");
+                        .HasColumnType("smallint")
+                        .HasDefaultValueSql("1");
 
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");
@@ -228,7 +229,8 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                     b.Property<byte>("RecordState")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("smallint")
-                        .HasDefaultValueSql("0");
+                        .HasDefaultValueSql("1");
+
 
                     b.Property<string>("SecurityStamp")
                         .IsRequired()
@@ -298,7 +300,8 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                         .HasDefaultValueSql("1");
 
                     b.Property<byte>("RecordState")
-                        .HasColumnType("smallint");
+                        .HasColumnType("smallint")
+                        .HasDefaultValueSql("1");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
@@ -360,7 +363,8 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<byte>("RecordState")
-                        .HasColumnType("smallint");
+                        .HasColumnType("smallint")
+                        .HasDefaultValueSql("1");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
@@ -413,7 +417,9 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                         .HasDefaultValueSql("1");
 
                     b.Property<byte>("RecordState")
-                        .HasColumnType("smallint");
+                        .HasColumnType("smallint")
+                        .HasDefaultValueSql("1");
+
 
                     b.HasKey("UserId", "RoleId");
 
@@ -468,7 +474,9 @@ namespace DNMOFT.CostTrackR.Web.Migrations
                         .HasDefaultValueSql("1");
 
                     b.Property<byte>("RecordState")
-                        .HasColumnType("smallint");
+                        .HasColumnType("smallint")
+                        .HasDefaultValueSql("1");
+
 
                     b.Property<string>("Value")
                         .IsRequired()

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DNMOFT.CostTrackR.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240126032550_InitialCreate")]
+    [Migration("20240126040815_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

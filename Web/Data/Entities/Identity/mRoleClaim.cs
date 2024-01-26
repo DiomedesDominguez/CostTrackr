@@ -27,7 +27,7 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
         [Required, DefaultValue(1)]
         public long CreatedBy { get; set; }
         [Required, DefaultValue(1)]
-        public RecordState RecordState { get; set; }
+        public RecordState RecordState { get; set; } = RecordState.Active;
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime LastUpdated { get; set; }
 

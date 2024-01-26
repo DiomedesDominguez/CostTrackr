@@ -70,6 +70,16 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
                 public mUser()
                 {
                         PhoneNumber = string.Empty;
+                        Email = string.Empty;
+                        UserName = string.Empty;
+                        NormalizedEmail = string.Empty;
+                        NormalizedUserName = string.Empty;
+                        PasswordHash = string.Empty;
+                        SecurityStamp = string.Empty;
+                        ConcurrencyStamp = string.Empty;
+                        Name = string.Empty;
+                        LastName = string.Empty;
+                        RecordState = RecordState.Active;
                 }
 
 

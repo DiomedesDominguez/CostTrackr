@@ -8,6 +8,13 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Base
 {
     public class BaseEntity : IBaseEntity
     {
+
+        public BaseEntity()
+        {
+            RecordState = RecordState.Active;
+        }
+
+
         #region Base Properties
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

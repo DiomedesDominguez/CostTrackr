@@ -13,12 +13,12 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
     [Table("mUserLogins")]
     public class mUserLogin: IdentityUserLogin<long>
     {
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         [Column(TypeName = "varchar(450)")]
         public override string LoginProvider { get; set; } 
         [Column(TypeName = "varchar(450)")]
         public override string ProviderKey { get; set; } 
         [Column(TypeName = "text")]
-#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override string ProviderDisplayName { get; set; } 
 #pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         [MaxLength(15), Column(TypeName = "varchar(15)")]

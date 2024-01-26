@@ -11,13 +11,13 @@ public class ApplicationDbContext : IdentityDbContext<mUser, mRole, long, mUserC
         : base(options)
     {
     }
-    public new DbSet<mUser> Users { get; set; }
-    public new DbSet<mUserRole> UserRoles { get; set; }
-    public new DbSet<mUserClaim> UserClaims { get; set; }
-    public new DbSet<mUserLogin> UserLogins { get; set; }
-    public new DbSet<mUserToken> UserTokens { get; set; }
-    public new DbSet<mRole> Roles { get; set; }
-    public new DbSet<mRoleClaim> RoleClaims { get; set; }
+    public DbSet<mUser> Users { get; set; }
+    public DbSet<mUserRole> UserRoles { get; set; }
+    public DbSet<mUserClaim> UserClaims { get; set; }
+    public DbSet<mUserLogin> UserLogins { get; set; }
+    public DbSet<mUserToken> UserTokens { get; set; }
+    public DbSet<mRole> Roles { get; set; }
+    public DbSet<mRoleClaim> RoleClaims { get; set; }
     public long UserId { get; set; }
 
     public override int SaveChanges()

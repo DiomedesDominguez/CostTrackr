@@ -1,4 +1,4 @@
-namespace Web.Data.Enums
+namespace DNMOFT.CostTrackR.Web.Data.Enums
 {
      using System.ComponentModel;
 

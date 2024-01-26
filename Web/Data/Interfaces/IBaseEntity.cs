@@ -1,6 +1,6 @@
-using Web.Data.Enums;
+using DNMOFT.CostTrackR.Web.Data.Enums;
 
-namespace Web.Data.Interfaces
+namespace DNMOFT.CostTrackR.Web.Data.Interfaces
 {
     public interface IBaseEntity: IDisposable
     {

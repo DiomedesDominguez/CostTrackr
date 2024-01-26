@@ -2,13 +2,13 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using Web.Data.Enums;
-using Web.Data.Interfaces;
+using DNMOFT.CostTrackR.Web.Data.Enums;
+using DNMOFT.CostTrackR.Web.Data.Interfaces;
 
-namespace Web.Data.Entities.Identity
+namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
 {
     [Table("mRoles")]
-    public class mRole: IdentityRole<long>, IBaseEntity
+    public class mRole: IdentityRole<long>
     {
         [Column(TypeName = "text")]
         public override string ConcurrencyStamp { get; set; } 
@@ -21,7 +21,7 @@ namespace Web.Data.Entities.Identity
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order = 0)]
-        public long Id { get; set; }
+        public override long Id { get; set; }
         [MaxLength(15), Required, DefaultValue("'127.0.0.1'")]
         public string ClientIp { get; set; }
         [Required]

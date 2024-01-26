@@ -1,10 +1,10 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Web.Data.Enums;
-using Web.Data.Interfaces;
+using DNMOFT.CostTrackR.Web.Data.Enums;
+using DNMOFT.CostTrackR.Web.Data.Interfaces;
 
-namespace Web.Data.Entities.Base
+namespace DNMOFT.CostTrackR.Web.Data.Entities.Base
 {
     public class BaseEntity : IBaseEntity
     {

@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
+
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using Web.Data.Enums;
-using Web.Data.Interfaces;
+using DNMOFT.CostTrackR.Web.Data.Enums;
 
-namespace Web.Data.Entities.Identity
+namespace DNMOFT.CostTrackR.Web.Data.Entities.Identity
 {
     [Table("mUsers")]
-    public class mUser: IdentityUser<long>, IBaseEntity
+    public class mUser: IdentityUser<long>,IDisposable
     {
         [Column(TypeName = "text")]
         public override string ConcurrencyStamp { get; set; } = Guid.NewGuid().ToString();

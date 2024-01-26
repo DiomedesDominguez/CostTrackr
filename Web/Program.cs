@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using DNMOFT.CostTrackR.Web.Data;
 using Microsoft.OpenApi.Models;
 using DNMOFT.CostTrackR.Web.Data.Entities.Identity;
+using Microsoft.EntityFrameworkCore.Migrations;
+using DNMOFT.CostTrackR.Web.Data.Entities.App;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
@@ -12,7 +14,7 @@ builder.Configuration.AddJsonFile("sidebar.json", optional: true, reloadOnChange
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution));
+    options.UseNpgsql(connectionString, x=>x.MigrationsHistoryTable("mEFMH")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution).ReplaceService<IHistoryRepository, CustomHistory>());
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

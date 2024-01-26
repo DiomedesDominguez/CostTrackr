@@ -6,16 +6,17 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using DNMOFT.CostTrackR.Web.Data.Entities.Identity;
 
 namespace DNMOFT.CostTrackR.Web.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterConfirmationModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<mUser> _userManager;
         private readonly IEmailSender _sender;
 
-        public RegisterConfirmationModel(UserManager<IdentityUser> userManager, IEmailSender sender)
+        public RegisterConfirmationModel(UserManager<mUser> userManager, IEmailSender sender)
         {
             _userManager = userManager;
             _sender = sender;
@@ -37,7 +38,7 @@ namespace DNMOFT.CostTrackR.Web.Areas.Identity.Pages.Account
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
-                return NotFound($"Unable to load user with email '{email}'.");
+                return NotFound($"No se ha encontrado en el sistema el correo '{email}'.");
             }
 
             Email = email;

@@ -46,11 +46,11 @@ namespace DNMOFT.CostTrackR.Web.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            
+
             [Required]
             [Display(Name = "Nombre")]
             public string Name { get; set; }
-            
+
             [Required]
             [Display(Name = "Apellido")]
             public string LastName { get; set; }
@@ -74,8 +74,10 @@ namespace DNMOFT.CostTrackR.Web.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            ReturnUrl = returnUrl;
+            ReturnUrl = !string.IsNullOrEmpty(returnUrl) ? returnUrl : "/";
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            LocalRedirect(ReturnUrl);
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -84,7 +86,7 @@ namespace DNMOFT.CostTrackR.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new mUser { UserName = Input.Email, Email = Input.Email, Name = Input.Name, LastName = Input.LastName};
+                var user = new mUser { UserName = Input.Email, Email = Input.Email, Name = Input.Name, LastName = Input.LastName };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

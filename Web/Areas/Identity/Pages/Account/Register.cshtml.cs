@@ -70,6 +70,10 @@ namespace DNMOFT.CostTrackR.Web.Areas.Identity.Pages.Account
             [Display(Name = "Confirmar contraseña")]
             [Compare("Password", ErrorMessage = "La contraseña y la confirmación de la contraseña no coinciden.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [Display(Name = "Acepto los términos y condiciones")]
+            public bool AcceptTerms { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)

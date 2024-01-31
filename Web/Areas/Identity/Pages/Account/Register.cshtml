@@ -56,8 +56,8 @@
 					<span asp-validation-for="Input.ConfirmPassword" class="text-danger-700 fw-bold"></span>
 				</div>
 				<div class="form-check mb-4">
-					<input class="form-check-input" type="checkbox" value="" id="agreementCheckbox" />
-					<label class="form-check-label" for="agreementCheckbox">
+					<input asp-formaction="Input.AcceptTerms" class="form-check-input" value="" id="accepterms" />
+					<label class="form-check-label" for="accepterms" aria-required="true" required>
 						Al hacer clic en Registrarse, acepta nuestros  <a href="javascript:;">Términos</a> y que ha leído nuestra <a href="javascript:;">Política de datos</a>, incluido nuestro <a href="javascript:;">Uso de cookies</a>.
 					</label>
 				</div>

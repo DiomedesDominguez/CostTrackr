@@ -57,7 +57,7 @@
 					<input type="text" class="form-control" placeholder="Sidebar menu filter..." data-sidebar-search="true" />
 				</div>
 			}
-			<div class="menu-header">Navigation</div>
+			<div class="menu-header">Navegación</div>
 			@foreach (var menu in sidebarMenu) {
 				var menuChildren = menu.GetSection("children").GetChildren().ToArray();
 				var menuActiveLvl1 = "";
@@ -209,15 +209,7 @@
 						</div>
 					}
 				</div>
-			}
-			
-			<div class="menu-item">
-				<a class="menu-link" asp-area="Identity" asp-page="/Account/Register">
-					<div class="menu-icon"><i class="fa fa-fingerprint"></i></div>
-					<div class="menu-text">ASP Identity</div>
-				</a>
-			</div>
-			
+			}			
 			<div class="menu-item">
 				<a class="menu-link" asp-area="Identity" asp-page="/Account/Manage/Index">
 					<div class="menu-icon"><i class="fa fa-fingerprint"></i></div>

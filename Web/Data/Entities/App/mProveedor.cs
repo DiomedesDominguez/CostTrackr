@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using DNMOFT.CostTrackR.Web.Data.Entities.Base;
+using Web.Data.Enums;
 
 namespace Web.Data.Entities.App
 {

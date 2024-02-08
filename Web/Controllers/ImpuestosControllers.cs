@@ -6,17 +6,23 @@ using DNMOFT.CostTrackR.Web.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DNMOFT.CostTrackR.Web.Controllers;
 
+namespace DNMOFT.CostTrackR.Web.Controllers;
 [Authorize]
-public class ProductosController : Controller
+public class ImpuestosControllers: Controller
 {
-    private readonly ILogger<ProductosController> _logger;
+private readonly ILogger<ImpuestosControllers> _logger;
     private readonly ApplicationDbContext _context;
 
-    public ProductosController(ILogger<ProductosController> logger, ApplicationDbContext context)
+    public ImpuestosControllers(ILogger<ImpuestosControllers> logger, ApplicationDbContext context)
     {
         _context = context;
         _logger = logger;
     }
+
+    public IActionResult Index()
+    {
+        return View();
+    }
+    
 }

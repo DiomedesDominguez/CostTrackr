@@ -34,7 +34,7 @@ namespace Web.Data.Entities.App
         ///     Gets or sets the impuesto.
         /// </summary>
         /// <value>The impuesto.</value>
-        public virtual mImpuesto Impuesto { get; set; }
+        public virtual mImpuesto? Impuesto { get; set; }
 
         /// <summary>
         ///     Gets or sets the impuesto identifier.
@@ -62,19 +62,19 @@ namespace Web.Data.Entities.App
         ///     Gets or sets the presentacion.
         /// </summary>
         /// <value>The presentacion.</value>
-        public virtual mPresentacion Presentacion { get; set; }
+        public virtual mPresentacion? Presentacion { get; set; }
 
         /// <summary>
         ///     Gets or sets the presentacion identifier.
         /// </summary>
         /// <value>The presentacion identifier.</value>
-        public long PresentacionId { get; set; }
+        public long? PresentacionId { get; set; }
 
         /// <summary>
         ///     Gets or sets the producto familia.
         /// </summary>
         /// <value>The producto familia.</value>
-        public virtual mProductoFamilia ProductoFamilia { get; set; }
+        public virtual mProductoFamilia? ProductoFamilia { get; set; }
 
         /// <summary>
         ///     Gets or sets the producto familia identifier.

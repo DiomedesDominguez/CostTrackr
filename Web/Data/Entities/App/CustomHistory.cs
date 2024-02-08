@@ -17,7 +17,7 @@ namespace DNMOFT.CostTrackR.Web.Data.Entities.App
         {
             base.ConfigureTable(history);
 
-            history.Property(h => h.MigrationId).HasColumnName("Id");
+            history.Property(h => h.MigrationId).HasColumnName("Id").HasMaxLength(200).IsRequired();
         }
     }
 }

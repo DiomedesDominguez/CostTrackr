@@ -7,6 +7,12 @@
       "action": "Index"
     },
     {
+      "controller": "Impuestos",
+      "icon": "fa fa-percent",
+      "text": "Impuestos",
+      "action": "Index"
+    },
+    {
       "controller": "Productos",
       "icon": "fa fa-shopping-cart",
       "text": "Productos",

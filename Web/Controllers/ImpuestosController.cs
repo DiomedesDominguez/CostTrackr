@@ -9,12 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DNMOFT.CostTrackR.Web.Controllers;
 [Authorize]
-public class ImpuestosControllers: Controller
+public class ImpuestosController: Controller
 {
-private readonly ILogger<ImpuestosControllers> _logger;
+private readonly ILogger<ImpuestosController> _logger;
     private readonly ApplicationDbContext _context;
 
-    public ImpuestosControllers(ILogger<ImpuestosControllers> logger, ApplicationDbContext context)
+    public ImpuestosController(ILogger<ImpuestosController> logger, ApplicationDbContext context)
     {
         _context = context;
         _logger = logger;

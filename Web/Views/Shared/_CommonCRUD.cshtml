@@ -1,14 +1,41 @@
 <div class="panel panel-inverse">
 	<div class="panel-heading">
-		<h4 class="panel-title">Panel Title here</h4>
+		<h4 class="panel-title" data-bind="text:title"></h4>
 		<div class="panel-heading-btn">
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
-			@* <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
-			<a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa fa-times"></i></a> *@
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i
+					class="fa fa-expand"></i></a>
+			@* <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa
+			fa-redo"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa
+			fa-minus"></i></a>
+			<a href="javascript:;" class="btn btn-xs btn-icon btn-danger" data-toggle="panel-remove"><i class="fa
+			fa-times"></i></a> *@
 		</div>
 	</div>
 	<div class="panel-body">
-		Panel Content Here
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="dt-buttons btn-group flex-wrap">
+					<!-- ko if: canExport-->
+					<button class="btn btn-secondary buttons-copy buttons-html5 btn-sm" tabindex="0"
+						aria-controls="data-table-buttons" type="button" title="Exportar"><i class="fas fa-file-export"
+							style="font-size: 14px;"></i></button>
+					<!-- /ko -->
+					<button class="btn btn-secondary buttons-csv buttons-html5 btn-sm" tabindex="0"
+						aria-controls="data-table-buttons" type="button"><i class="fas fa-sync" style="font-size: 14px;"
+							data-bind="click: Load" title="Refrescar"></i></button>
+					<!-- ko if: canCreate-->
+					<button class="btn btn-secondary buttons-excel buttons-html5 btn-sm" tabindex="0"
+						aria-controls="data-table-buttons" type="button" title="Crear" data-bind="click: ShowCreateForm"><i class="fas fa-plus" style="font-size: 14px;"></i></button>
+					<!-- /ko -->
+				</div>
+			</div>
+			<div class="col-sm-7">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Buscar..." data-bind="value: filter, valueUpdate: 'afterkeydown'">
+					<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

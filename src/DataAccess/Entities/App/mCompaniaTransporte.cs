@@ -1,31 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.App;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using DNMOFT.CostTrackr.DataAccess.Entities.Base;
 
-namespace DataAccess.Entities.App
+[Table("mCompaniasTransportes")]
+public class mCompaniaTransporte : BaseEntity
 {
-   [Table("mCompaniasTransportes")]
-    public class mCompaniaTransporte : BaseEntity
-    {
-        #region Fields and properties
 
-        /// <summary>
-        ///     Gets or sets the codigo.
-        /// </summary>
-        /// <value>The codigo.</value>
-        [MaxLength(7)]
-        public string Codigo { get; set; }
+    [MaxLength(7)]
+    public string Codigo { get; set; } = string.Empty;
 
-        /// <summary>
-        ///     Gets or sets the nombre.
-        /// </summary>
-        /// <value>The nombre.</value>
-        [Required]
-        [MaxLength(100)]
-        [MinLength(3)]
-        public string Nombre { get; set; }
-
-        #endregion
-    }
+    [Required]
+    [MaxLength(100)]
+    [MinLength(3)]
+    public string Nombre { get; set; } = string.Empty;
 }

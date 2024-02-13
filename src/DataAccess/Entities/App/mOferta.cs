@@ -24,7 +24,7 @@ public class mOferta : BaseEntity
     ///     Gets or sets the clasificacion cliente.
     /// </summary>
     /// <value>The clasificacion cliente.</value>
-    public virtual mClasificacionCliente ClasificacionCliente { get; set; }
+    public virtual mClasificacionCliente? ClasificacionCliente { get; set; }
 
     /// <summary>
     ///     Gets or sets the clasificacion cliente identifier.
@@ -73,13 +73,13 @@ public class mOferta : BaseEntity
     ///     Gets or sets the nombre.
     /// </summary>
     /// <value>The nombre.</value>
-    public string Nombre { get; set; }
+    public string Nombre { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the nota.
     /// </summary>
     /// <value>The nota.</value>
-    public string Nota { get; set; }
+    public string Nota { get; set; } = string.Empty;
 
     [NotMapped]
     public decimal Precio

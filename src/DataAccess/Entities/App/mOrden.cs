@@ -19,7 +19,7 @@ public class mOrden : BaseEntity
     ///     Gets or sets the cliente.
     /// </summary>
     /// <value>The cliente.</value>
-    public virtual mCliente Cliente { get; set; }
+    public virtual mCliente? Cliente { get; set; }
 
     /// <summary>
     ///     Gets or sets the cliente identifier.
@@ -31,7 +31,7 @@ public class mOrden : BaseEntity
     ///     Gets or sets the cliente nombre.
     /// </summary>
     /// <value>The cliente nombre.</value>
-    public string ClienteNombre { get; set; }
+    public string ClienteNombre { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the details.

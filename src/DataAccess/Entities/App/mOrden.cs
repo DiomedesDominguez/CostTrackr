@@ -45,35 +45,24 @@ public class mOrden : BaseEntity
     /// <value>The entregar.</value>
     public DateTime? Entregar { get; set; }
 
-    /// <summary>
-    ///     Gets or sets the factura.
-    /// </summary>
-    /// <value>The factura.</value>
-    public string Factura { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the factura NCF.
-    /// </summary>
-    /// <value>The factura NCF.</value>
-    public string FacturaNCF { get; set; }
 
     /// <summary>
     ///     Gets or sets the nota.
     /// </summary>
     /// <value>The nota.</value>
-    public string Nota { get; set; }
+    public string Nota { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the numero.
     /// </summary>
     /// <value>The numero.</value>
-    public string Numero { get; set; }
+    public string Numero { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the vendedor.
     /// </summary>
     /// <value>The vendedor.</value>
-    public virtual mVendedor Vendedor { get; set; }
+    public virtual mVendedor? Vendedor { get; set; }
 
     /// <summary>
     ///     Gets or sets the vendedor identifier.

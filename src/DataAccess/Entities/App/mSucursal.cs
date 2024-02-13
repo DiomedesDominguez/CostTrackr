@@ -5,7 +5,7 @@ using DNMOFT.CostTrackr.DataAccess.Entities.Base;
 using DNMOFT.CostTrackr.DataAccess.Enums;
 
 [Table("mSucursales")]
-public class mSucursal
+public class mSucursal : BaseEntity
 {
     [MaxLength(100)]
     public string Descripcion { get; set; } = string.Empty;

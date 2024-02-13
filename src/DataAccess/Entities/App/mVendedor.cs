@@ -11,7 +11,6 @@ public class mVendedor : BaseEntity
     [MaxLength(19)]
     public string Codigo { get; set; } = string.Empty;
 
-
     [MaxLength(120)]
     public string Direccion { get; set; } = string.Empty;
 

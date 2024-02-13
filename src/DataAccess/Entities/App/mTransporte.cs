@@ -21,7 +21,6 @@ public class mTransporte : BaseEntity
     [NotMapped]
     public decimal Dimension => Largo * Ancho * Alto;
 
-
     [Required]
     [DecimalPrecision(10)]
     public decimal Largo { get; set; }

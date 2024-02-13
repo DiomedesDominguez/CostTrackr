@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.App;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using DNMOFT.CostTrackr.DataAccess.Entities.Base;
+using DNMOFT.CostTrackr.DataAccess.Enums;
 
-namespace DataAccess.Entities.App
-{
     [Table("mTransportistas")]
     public class mTransportista : BaseEntity
     {

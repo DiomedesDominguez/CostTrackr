@@ -1,37 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.App;
 
-namespace DataAccess.Entities.App
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using DNMOFT.CostTrackr.DataAccess.Entities.Base;
+
+[Table("mClasificacionesClientes")]
+public class mClasificacionCliente : BaseEntity
 {
-    [Table("mClasificacionesClientes")]
-    public class mClasificacionCliente : BaseEntity
-    {
-        #region Fields and properties
+    [MaxLength(15)]
+    public string Codigo { get; set; } = "";
 
-        /// <summary>
-        ///     Gets or sets the codigo.
-        /// </summary>
-        /// <value>The codigo.</value>
-        [MaxLength(15)]
-        public string Codigo { get; set; }
+    [MaxLength(550)]
+    public string Descripcion { get; set; } = "";
 
-        /// <summary>
-        ///     Gets or sets the descripcion.
-        /// </summary>
-        /// <value>The descripcion.</value>
-        [MaxLength(550)]
-        public string Descripcion { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the nombre.
-        /// </summary>
-        /// <value>The nombre.</value>
-        [Required]
-        [StringLength(40, MinimumLength = 3)]
-        public string Nombre { get; set; }
-
-        #endregion
-    }
+    [Required]
+    [StringLength(40, MinimumLength = 3)]
+    public string Nombre { get; set; } = "";
 }

@@ -8,15 +8,12 @@ using DNMOFT.CostTrackr.DataAccess.Enums;
     public class mSucursal
     {
          [MaxLength(100)]
-        public string Descripcion { get; set; }
+        public string Descripcion { get; set; } = string.Empty;
 
         [MaxLength(23)]
-        public string Documento { get; set; }
+        public string Documento { get; set; } = string.Empty;
 
         [Required]
         [StringLength(30, MinimumLength = 3)]
-        public string Nombre { get; set; }
-
-        public TipoDocumento TipoDocumento { get; set; }
+        public string Nombre { get; set; } = string.Empty;
     }
-}

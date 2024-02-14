@@ -45,5 +45,12 @@ namespace DNMOFT.CostTrackr.DataAccess
         public DbSet<mZona> Zonas { get; set; }
 
         public long UserId { get; set; }
+
+        override protected void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            
+            modelBuilder.SetDefaults();
+        }
     }
 }

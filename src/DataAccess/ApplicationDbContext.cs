@@ -19,11 +19,6 @@ namespace DNMOFT.CostTrackr.DataAccess
 
         }
 
-        /// <summary>
-        /// Gets or sets the user ID.
-        /// </summary>
-        public long UserId { get; set; }
-
         /// <inheritdoc />
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

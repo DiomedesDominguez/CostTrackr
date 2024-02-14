@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using DNMOFT.CostTrackr.DataAccess.Entities.Base;
 using DNMOFT.CostTrackr.DataAccess.Enums;
 
-[Table("mOfertasDetails")]
+[Table("mOfertasDetalles")]
 public class mOfertaDetail : BaseEntity
 {
 

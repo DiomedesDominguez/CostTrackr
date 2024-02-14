@@ -5,13 +5,10 @@ using DNMOFT.CostTrackr.DataAccess.Entities.Base;
 using DNMOFT.CostTrackr.DataAccess.Enums;
 
 [Table("mSucursales")]
-public class mSucursal : BaseEntity
+public class mSucursal : BaseDireccion
 {
     [MaxLength(100)]
     public string Descripcion { get; set; } = string.Empty;
-
-    [MaxLength(23)]
-    public string Documento { get; set; } = string.Empty;
 
     [Required]
     [StringLength(30, MinimumLength = 3)]

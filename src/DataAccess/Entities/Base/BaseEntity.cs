@@ -49,7 +49,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Entities.Base
         /// </summary>
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime LastModifiedAt { get; set; }
+        public DateTime LastModifiedAt { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Gets or sets the user ID who last modified the entity.

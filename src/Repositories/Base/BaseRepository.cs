@@ -1,4 +1,5 @@
-﻿namespace DNMOFT.CostTrackr.Repositories.Base;
+﻿
+namespace DNMOFT.CostTrackr.Repositories.Base;
 
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,10 @@ using DNMOFT.CostTrackr.DataAccess.Interfaces;
 using DNMOFT.CostTrackr.Repositories.Interfaces;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
-
+/// <summary>
+/// Represents a base repository class that provides common CRUD operations for entities.
+/// </summary>
+/// <typeparam name="TE">The entity type.</typeparam>
 public class BaseRepository<TE> : IRepository<TE>
         where TE : class, IBaseEntity, new()
 {
@@ -34,10 +38,7 @@ public class BaseRepository<TE> : IRepository<TE>
     {
         var isNew = model.Id == 0;
         if (isNew)
-        {
-            model.CreatedAt = DateTime.Now;
             DbSet.Add(model);
-        }
         else
             DbSet.Update(model);
 
@@ -107,22 +108,36 @@ public class BaseRepository<TE> : IRepository<TE>
 
     public void ExecuteSp(string storedProcedure, params object[] parameters)
     {
-        throw new NotImplementedException();
+        var command = $"EXECUTE {storedProcedure} ";
+        command += string.Join(", ", parameters.Select(p => $"'{p}'"));
+        _dbContext.Database.ExecuteSqlRaw(command);
     }
 
     public TE Get(Expression<Func<TE, bool>>? predicate = null)
     {
-        throw new NotImplementedException();
+        var queryable = DbSet.AsExpandable().Where(StateExpression(predicate)).AsExpandable();
+#pragma warning disable CS8603 // Possible null reference return.
+        return queryable.FirstOrDefault();
+#pragma warning restore CS8603 // Possible null reference return.
     }
 
     public IQueryable<TE> Get(Expression<Func<TE, bool>>? predicate = null, int maximumRows = 0, int startRowIndex = 0, string? sortExpression = null)
     {
-        throw new NotImplementedException();
+        var queryable = DbSet.AsExpandable().Where(StateExpression(predicate)).AsExpandable();
+
+        if (!string.IsNullOrEmpty(sortExpression))
+            queryable = queryable.SortBy(sortExpression).AsQueryable();
+
+        if (maximumRows > 0 && startRowIndex >= 0)
+            queryable = queryable.Skip(startRowIndex).Take(maximumRows);
+
+        return queryable;
     }
 
-    public TE GetById(long id)
+    public TE? GetById(long id)
     {
-        throw new NotImplementedException();
+        var model = DbSet.Find(id);
+        return model?.RecordState == RecordState.Eliminado ? null : model;
     }
 
     public IQueryable<TE> GetBySp(params object[] parameters)

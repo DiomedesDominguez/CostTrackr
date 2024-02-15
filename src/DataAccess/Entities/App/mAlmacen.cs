@@ -22,14 +22,14 @@ public class mAlmacen : BaseDireccion
     /// </summary>
     /// <value>The codigo.</value>
     [MaxLength(19)]
-    public string Codigo { get; set; } = "";
+    public string Codigo { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the descripcion.
     /// </summary>
     /// <value>The descripcion.</value>
     [MaxLength(200)]
-    public string Descripcion { get; set; } = "";
+    public string Descripcion { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the nombre.
@@ -37,7 +37,7 @@ public class mAlmacen : BaseDireccion
     /// <value>The nombre.</value>
     [Required]
     [StringLength(100, MinimumLength = 3)]
-    public string Nombre { get; set; } = "";
+    public string Nombre { get; set; } = string.Empty;
 
     #endregion
 

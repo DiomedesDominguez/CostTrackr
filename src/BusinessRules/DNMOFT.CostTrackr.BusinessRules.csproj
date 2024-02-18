@@ -17,4 +17,10 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DNMOFT.CostTrackr.DataAccess.csproj" />
+    <ProjectReference Include="..\Repositories\DNMOFT.CostTrackr.Repositories.csproj" />
+    <ProjectReference Include="..\ViewModel\DNMOFT.CostTrackr.ViewModel.csproj" />
+  </ItemGroup>
+
 </Project>

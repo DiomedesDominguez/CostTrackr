@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using DNMOFT.CostTrackr.DataAccess.Enums;
 using System.Diagnostics.CodeAnalysis;
 
-namespace DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 /// <summary>
 /// Represents a user claim in the CostTrackr application.
 /// </summary>

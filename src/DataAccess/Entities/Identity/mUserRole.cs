@@ -5,7 +5,7 @@ using DNMOFT.CostTrackr.DataAccess.Enums;
 using Microsoft.AspNetCore.Identity;
 
 
-namespace DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 
 [Table("mUsersRoles")]
 public class mUserRole : IdentityUserRole<long>

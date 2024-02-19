@@ -16,7 +16,7 @@ public class OrdenViewModel : BaseViewModel
 
     public string Numero { get; set; } = string.Empty;
 
-    public string VendedorNombre { get; set; }
+    public string VendedorNombre { get; set; } = string.Empty;
 
     public long VendedorId { get; set; }
 }

@@ -1399,7 +1399,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mZonas");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mRole", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mRole", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -1448,7 +1448,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mRoles");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mRoleClaim", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mRoleClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1494,7 +1494,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mRoleClaims");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mUser", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mUser", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -1588,7 +1588,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mUsers");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mUserClaim", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mUserClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1634,7 +1634,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mUserClaims");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mUserLogin", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mUserLogin", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -1688,7 +1688,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mUserLogins");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mUserRole", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mUserRole", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -1730,7 +1730,7 @@ namespace DNMOFT.CostTrackr.DataAccess.Migrations
                     b.ToTable("mUsersRoles");
                 });
 
-            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity.mUserToken", b =>
+            modelBuilder.Entity("DNMOFT.CostTrackr.DataAccess.Entities.Identity.mUserToken", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

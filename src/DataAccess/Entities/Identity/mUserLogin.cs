@@ -6,7 +6,7 @@ using DNMOFT.CostTrackr.DataAccess.Enums;
 using Microsoft.AspNetCore.Identity;
 
 
-namespace DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 /// <summary>
 /// Represents a user login entity in the database.
 /// </summary>

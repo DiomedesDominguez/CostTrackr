@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using DNMOFT.CostTrackr.DataAccess.Enums;
 using Microsoft.AspNetCore.Identity;
 
-namespace DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity;
+namespace DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 /// <summary>
 /// /// Represents a custom role entity in the application.
 /// </summary>

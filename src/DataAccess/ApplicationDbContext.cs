@@ -1,4 +1,4 @@
-using DNMOFT.CostTrackr.DataAccess.Entities.Base.Identity;
+using DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 using DNMOFT.CostTrackr.DataAccess.Helpers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using DNMOFT.CostTrackr.DataAccess.Interfaces;
 using NetTopologySuite.Geometries;
 
@@ -25,6 +26,7 @@ public class BaseRegion : BaseEntity, IRegion
     /// <summary>
     /// Gets or sets the coordinates of the region.
     /// </summary>
+    [Column(TypeName="geography")]
     public MultiPolygon? Coordenadas { get; set; }
 
     /// <summary>

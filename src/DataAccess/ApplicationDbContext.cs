@@ -16,14 +16,14 @@ namespace DNMOFT.CostTrackr.DataAccess
         /// <param name="options">The options for configuring the database context.</param>
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
+            
         }
 
         /// <inheritdoc />
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            
+        {                        
+            modelBuilder.HasPostgresExtension("postgis");
+
             modelBuilder.SetDefaults();
         }
     }

@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using DNMOFT.CostTrackr.DataAccess.Interfaces;
 using NetTopologySuite.Geometries;
 
@@ -20,5 +21,6 @@ public class BaseDireccion : BaseEntity, IDireccion
     /// <summary>
     /// Gets or sets the coordinates of the address.
     /// </summary>
+    [Column(TypeName="geography")]
     public Point? Coordenadas { get; set; }
 }

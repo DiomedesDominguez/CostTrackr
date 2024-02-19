@@ -18,7 +18,7 @@ public class ProductoViewModel : BaseViewModel
 
     public string DescripcionContabilidad { get; set; } = string.Empty;
 
-    public string ImpuestoNombre { get; set; }
+    public string ImpuestoNombre { get; set; } = string.Empty;
 
     public long? ImpuestoId { get; set; }
 
@@ -26,11 +26,11 @@ public class ProductoViewModel : BaseViewModel
 
     public decimal Precio { get; set; }
 
-    public string PresentacionNombre { get; set; }
+    public string PresentacionNombre { get; set; } = string.Empty;
 
     public long PresentacionId { get; set; }
 
-    public string ProductoFamiliaNombre { get; set; }
+    public string ProductoFamiliaNombre { get; set; } = string.Empty;
 
     public long? ProductoFamiliaId { get; set; }
 }

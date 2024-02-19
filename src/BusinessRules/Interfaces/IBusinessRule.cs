@@ -10,7 +10,7 @@ namespace DNMOFT.CostTrackr.BusinessRules.Interfaces
          where TE : class, IBaseEntity, new()
          where TV : class, IBaseViewModel, new()
     {
-        OptionsViewModel Combo(long id);
+        OptionsViewModel Combo(long? id);
         JTableResultViewModel<TV> Guardar(TV viewModel);
         JTableResultsViewModel<TV> GuardarBulk(IEnumerable<TV> viewModels);
         JTableResultsViewModel<TV> Listar(JTableRequestViewModel request);

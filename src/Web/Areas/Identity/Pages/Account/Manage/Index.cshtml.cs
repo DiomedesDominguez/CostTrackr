@@ -4,12 +4,16 @@
 
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Threading.Tasks;
 using DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Caching.Distributed;
+using Web.Helpers;
 
 namespace DNMOFT.CostTrackr.Web.Areas.Identity.Pages.Account.Manage
 {
@@ -17,13 +21,16 @@ namespace DNMOFT.CostTrackr.Web.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<mUser> _userManager;
         private readonly SignInManager<mUser> _signInManager;
+        private readonly IDistributedCache _distributedCache;
 
         public IndexModel(
             UserManager<mUser> userManager,
-            SignInManager<mUser> signInManager)
+            SignInManager<mUser> signInManager,
+            IDistributedCache distributedCache)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _distributedCache = distributedCache;
         }
 
         /// <summary>
@@ -63,8 +70,23 @@ namespace DNMOFT.CostTrackr.Web.Areas.Identity.Pages.Account.Manage
 
         private async Task LoadAsync(mUser user)
         {
-            var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            const string userNameKey = "userName";
+            const string phoneNumberKey = "phoneNumber";
+
+            var userName = await _distributedCache.GetRecordAsync<string>(userNameKey);
+            
+            if (userName == string.Empty || userName == null)
+            {
+                userName = await _userManager.GetUserNameAsync(user);
+                await _distributedCache.SetRecordAsync(userNameKey, userName);
+            }
+
+            var phoneNumber = await _distributedCache.GetRecordAsync<string>(phoneNumberKey);
+            if (phoneNumber == null || phoneNumber == string.Empty)
+            {
+                phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+                await _distributedCache.SetRecordAsync(phoneNumberKey, phoneNumber);
+            }
 
             Username = userName;
 

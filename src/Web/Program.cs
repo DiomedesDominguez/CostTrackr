@@ -39,6 +39,13 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "CostTrackR API", Version = "v1" });
 });
 
+builder.Services.AddStackExchangeRedisCache(options =>  
+{  
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "costtrackr_"; 
+});  
+builder.Services.AddDistributedMemoryCache();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

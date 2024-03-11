@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  dbCostTrackrPost:
+    restart: always
+    image: "postgis/postgis:16-3.4-alpine"
+    container_name: dbCostTrackrPost
+    env_file: "DB Server/postgredb.env"
+    ports: 
+      - 36000:5432 # Remove when the web service it's ready to deploy
+    volumes:
+      - postgre_data:/var/lib/postgresql/data
+volumes:
+  postgre_data:

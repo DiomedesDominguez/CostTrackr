@@ -47,7 +47,7 @@ public class OrdenDetailsViewModel : OrdenViewModel
     ///     Gets or sets the producto.
     /// </summary>
     /// <value>The producto.</value>
-    public string ProductoNombre { get; set; }
+    public string ProductoNombre { get; set; } = string.Empty;
 
     /// <summary>
     ///     Gets or sets the producto identifier.

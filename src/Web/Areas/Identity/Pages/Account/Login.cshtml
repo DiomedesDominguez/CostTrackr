@@ -2,52 +2,88 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+	ViewData["Title"] = "Acceder";
+	ViewData["AppSidebarNone"] = "false";
+	ViewData["AppHeaderNone"] = "false";
+	ViewData["AppThemePanel"] = "false";
+	ViewData["AppBodyClass"] = "pace-top";
+	ViewData["AppContentClass"] = "p-0";
+	ViewData["AppClass"] = "";
+	var randomBg = new Random().Next(1, 19);
 }
-
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email" class="form-label">Email</label>
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password" class="form-label">Password</label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="checkbox mb-3">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
-                        @Html.DisplayNameFor(m => m.Input.RememberMe)
-                    </label>
-                </div>
-                <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-</div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+	<partial name="_ValidationScriptsPartial" />
 }
+<div class="login login-with-news-feed">
+	<div class="news-feed">
+		<div class="news-image" style="background-image: url(/img/login-bg/login-bg-@(randomBg).jpg)"></div>
+		<div class="news-caption">
+			<h4 class="caption-title"><b>CostTrackR</b> Admin App</h4>
+			<p>
+				Además de web también es compatible con plataformas iPhone®, iPad® & Android™.
+			</p>
+		</div>
+	</div>
+	<div class="login-container">
+		<div class="login-header mb-30px">
+			<div class="brand">
+				<div class="d-flex align-items-center">
+					<span class="logo"></span>
+					<b>CostTrackR</b> Admin
+				</div>
+				<small>Acceder a la plataforma</small>
+			</div>
+			<div class="icon">
+				<i class="fa fa-sign-in-alt"></i>
+			</div>
+		</div>
+		<div class="login-content">
+			<form id="account" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+				<div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
+				<div class="mb-3">
+					<div><label asp-for="Input.Email" for="email" class="form-label"></label> <span
+							class="text-danger">*</span></div>
+					<input asp-for="Input.Email" id="email" class="form-control form-control-lg py-10px fs-13px"
+						placeholder="ejemplo usuario@dominio.com" />
+					<div class="mt-1"><span asp-validation-for="Input.Email" class="text-danger-700 fw-bold"></span>
+					</div>
+				</div>
+				<div class="mb-3">
+					<div><label asp-for="Input.Password" class="form-label"></label> <span class="text-danger">*</span>
+					</div>
+					<input asp-for="Input.Password" class="form-control form-control-lg py-10px fs-13px" />
+					<div class="mt-1"><span asp-validation-for="Input.Password" class="text-danger-700 fw-bold"></span>
+					</div>
+				</div>
+				<div class="mb-3">
+					<div class="form-check">
+						<input class="form-check-input" asp-for="Input.RememberMe" />
+						<label asp-for="Input.RememberMe" class="form-check-label">
+							@Html.DisplayNameFor(m => m.Input.RememberMe)
+						</label>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary d-block btn-lg w-100 mb-3 py-10px">Acceder</button>
+				<div class="row">
+					@* <div class="text-muted text-center fw-bold">
+						¿Aún sin cuenta? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrar</a>
+					</div> *@
+				</div>
+				<div class="row">
+					<div class="col-7">
+						<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar correo de
+							confirmacion</a>
+					</div>
+					<div class="col-5 text-end">
+						<a id="forgot-password" asp-page="./ForgotPassword">¿Olvidó la contraseña?</a>
+					</div>
+				</div>
+				<hr class="bg-gray-600 opacity-2" />
+				<p class="text-center text-gray-600">
+					&copy; CostTrackR Todos los derechos reservados @DateTime.Now.Year
+				</p>
+			</form>
+		</div>
+	</div>
+</div>

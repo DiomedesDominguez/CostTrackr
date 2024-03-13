@@ -23,7 +23,7 @@ public static class DistributedCacheExtensions
     public static async Task<T?> GetRecordAsync<T>(this IDistributedCache cache, string recordId)
     {
         var jsonData = await cache.GetStringAsync(recordId);
-#pragma warning disable CS8603 // Possible null reference return.
+#pragma warning disable CS8603
         return string.IsNullOrEmpty(jsonData) ? default : JsonSerializer.Deserialize<T>(jsonData);
 #pragma warning restore CS8603
     }

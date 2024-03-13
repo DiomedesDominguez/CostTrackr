@@ -31,8 +31,9 @@ builder.Services.AddIdentity<mUser, mRole>(options => options.SignIn.RequireConf
     .AddDefaultUI()
     .AddDefaultTokenProviders();
 
-// Add services to the container.
+
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -63,5 +64,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapControllers();
+
+app.MapControllerRoute("default", "api/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

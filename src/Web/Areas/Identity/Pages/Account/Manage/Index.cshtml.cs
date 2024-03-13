@@ -63,14 +63,17 @@ public class IndexModel : PageModel
 
     private async Task LoadAsync(mUser user)
     {
-        const string userNameKey = "userName";
+        const string emailKey = "userEmail";
         const string phoneNumberKey = "phoneNumber";
-        Username = await _distributedCache.GetRecordAsync<string>(userNameKey);
+        const string userNameKey = "userName";
+
+        Username = await _distributedCache.GetRecordAsync<string>(emailKey);
 
         if (Username == string.Empty || Username == null)
         {
-            Username = await _userManager.GetUserNameAsync(user);
-            await _distributedCache.SetRecordAsync(userNameKey, Username);
+            Username = user.UserName;
+            await _distributedCache.SetRecordAsync(emailKey, Username);
+            await _distributedCache.SetRecordAsync(userNameKey, user.Name);
         }
 
         var phoneNumber = await _distributedCache.GetRecordAsync<string>(phoneNumberKey);

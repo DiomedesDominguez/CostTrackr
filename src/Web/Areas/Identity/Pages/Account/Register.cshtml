@@ -1,67 +1,81 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+	ViewData["Title"] = "Registro";
+	ViewData["AppSidebarNone"] = "false";
+	ViewData["AppHeaderNone"] = "false";
+	ViewData["AppBodyClass"] = "pace-top";
+	ViewData["AppContentClass"] = "p-0";
+	ViewData["AppClass"] = "";
+	var randomBg = new Random().Next(1, 19);
 }
-
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
+<div class="register register-with-news-feed">
+	<div class="news-feed">
+		<div class="news-image" style="background-image: url(/img/login-bg/login-bg-@(randomBg).jpg)"></div>
+		<div class="news-caption">
+			<h4 class="caption-title"><b>CostTrackR</b> Admin App</h4>
+			<p>
+				Además de web también es compatible con plataformas iPhone®, iPad® & Android™.
+			</p>
+		</div>
+	</div>
+	<div class="register-container">
+		<div class="register-header mb-25px h1">
+			<div class="mb-1">Registro</div>
+			<small class="d-block fs-15px lh-16">Crea tu cuenta CostTrackR.</small>
+		</div>
+		<div class="register-content">
+			<form id="account" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="fs-13px">
+				<div asp-validation-summary="All" class="text-danger-700 fw-bold mt-3"></div>
+				<div class="mb-3">
+					<label asp-for="Input.Name" for="name" class="mb-2"></label> <span class="text-danger">*</span>
+					<div class="row gx-3">
+						<div class="col-md-6 mb-2 mb-md-0">
+							<input asp-for="Input.Name" id="name" class="form-control fs-13px" placeholder="Nombre(s)" />
+							<span asp-validation-for="Input.Name" class="text-danger-700 fw-bold"></span>
+						</div>
+						<div class="col-md-6">
+							<input asp-for="Input.LastName" id="lastname" class="form-control fs-13px" placeholder="Apellido(s)" />
+							<span asp-validation-for="Input.LastName" class="text-danger-700 fw-bold"></span>
+						</div>
+					</div>
+				</div>
+				<div class="mb-3">
+					<label asp-for="Input.Email" for="email" class="mb-2"></label> <span class="text-danger">*</span>
+					<input asp-for="Input.Email" id="email" class="form-control fs-13px" placeholder="ejemplo usuario@dominio.com" />
+					<span asp-validation-for="Input.Email" class="text-danger-700 fw-bold"></span>
+				</div>
+				<div class="mb-4">
+					<label asp-for="Input.Password" for="paswword" class="mb-2"></label> <span class="text-danger">*</span>
+					<input asp-for="Input.Password" id="password" class="form-control fs-13px" />
+					<span asp-validation-for="Input.Password" class="text-danger-700 fw-bold"></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="Input.ConfirmPassword" for="confirmpassword" class="mb-2"></label> <span class="text-danger">*</span>
+					<input asp-for="Input.ConfirmPassword" id="confirmpassword" class="form-control fs-13px" />
+					<span asp-validation-for="Input.ConfirmPassword" class="text-danger-700 fw-bold"></span>
+				</div>
+				<div class="form-check mb-4">
+					<input asp-formaction="Input.AcceptTerms" class="form-check-input" value="" id="accepterms" />
+					<label class="form-check-label" for="accepterms" aria-required="true" required>
+						Al hacer clic en Registrarse, acepta nuestros  <a href="javascript:;">Términos</a> y que ha leído nuestra <a href="javascript:;">Política de datos</a>, incluido nuestro <a href="javascript:;">Uso de cookies</a>.
+					</label>
+				</div>
+				<div class="mb-4">
+					<button type="submit" class="btn btn-theme d-block w-100 btn-lg h-45px fs-13px">Registrarse</button>
+				</div>
+				<div class="mb-4 pb-5">
+					¿Ya es miembro? Click <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">aquí</a> para acceder.
+				</div>
+				<hr class="bg-gray-600 opacity-2" />
+				<p class="text-center text-gray-600">
+					&copy; CostTrackR Todos los derechos reservados @DateTime.Now.Year
+				</p>
+			</form>
+		</div>
+	</div>
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+	<partial name="_ValidationScriptsPartial" />
 }

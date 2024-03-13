@@ -1,9 +1,11 @@
 ﻿@using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
 @{
+	#pragma warning disable CS8602 
 	var menuController = ViewContext.RouteData.Values["controller"].ToString();
 	var menuAction = ViewContext.RouteData.Values["action"].ToString();
 	var sidebarMenu = Configuration.GetSection("sidebarMenu").GetChildren().ToArray();
+	#pragma warning restore CS8602
 }
 
 <!-- BEGIN #top-menu -->

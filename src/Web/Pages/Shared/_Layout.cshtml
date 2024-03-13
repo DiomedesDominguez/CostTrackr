@@ -2,6 +2,8 @@
 @using Microsoft.AspNetCore.Http
 
 @{
+	#pragma warning disable CS8600
+	
 	string appMode = "";
 	if (Context.Request.Cookies.TryGetValue("app-theme-dark-mode", out string appModeValue))
 	{
@@ -10,6 +12,7 @@
 			appMode = "dark";
 		}
 	}
+	#pragma warning restore CS8600
 }
 
 <html lang="es-DO" data-bs-theme="@appMode" @ViewData["AppHtmlAttr"]>

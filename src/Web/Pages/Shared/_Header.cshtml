@@ -1,0 +1,127 @@
+﻿<!-- BEGIN #header -->
+<div id="header" class="app-header"@(ViewData["AppHeaderInverse"] != null ? " data-bs-theme=dark" : "")>
+	<!-- BEGIN navbar-header -->
+	<div class="navbar-header">
+		@if (ViewData["AppSidebarTwo"] != null) {
+		<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-end-mobile">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		}
+		<a href="/" class="navbar-brand"><span class="navbar-logo"></span> <b>CostTrackR</b> Admin</a>
+		@if (ViewData["AppHeaderMegaMenu"] != null && ViewData["AppSidebarTwo"] == null) {
+			<button type="button" class="navbar-mobile-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar">
+				<span class="fa-stack fa-lg">
+					<i class="far fa-square fa-stack-2x"></i>
+					<i class="fa fa-cog fa-stack-1x mt-1px"></i>
+				</span>
+			</button>
+		}
+		@if (ViewData["AppTopMenu"] != null && ViewData["AppSidebarTwo"] == null) {
+			<button type="button" class="navbar-mobile-toggler" data-toggle="app-top-menu-mobile">
+				<span class="fa-stack fa-lg">
+					<i class="far fa-square fa-stack-2x"></i>
+					<i class="fa fa-cog fa-stack-1x mt-1px"></i>
+				</span>
+			</button>
+		}
+		@if (ViewData["AppTopMenu"] != null && ViewData["AppSidebarNone"] != null) {
+			<button type="button" class="navbar-mobile-toggler" data-toggle="app-top-menu-mobile">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		}
+		@if (ViewData["AppSidebarNone"] == null) {
+			<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		}
+	</div>
+	<!-- END navbar-header -->
+	@if (ViewData["AppHeaderMegaMenu"] != null) {
+		<!-- BEGIN navbar-collapse -->
+		<div class="collapse d-md-block me-auto" id="top-navbar">
+			<div class="navbar-nav">
+				<div class="navbar-item dropdown dropdown-lg">
+					<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+						<i class="fa fa-th-large fa-fw me-1"></i> 
+						<span class="d-lg-inline d-md-none">Mega</span>
+						<b class="caret ms-1"></b>
+					</a>
+					<div class="dropdown-menu dropdown-menu-lg">
+						content here
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END navbar-collapse -->
+	}
+	</ul>
+	<!-- BEGIN header-nav -->
+	<div class="navbar-nav">
+		<div class="navbar-item dropdown">
+			<a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
+				<i class="fa fa-bell"></i>
+				<span class="badge">0</span>
+			</a>
+			<div class="dropdown-menu media-list dropdown-menu-end">
+				<div class="dropdown-header">Notificaciones (0)</div>
+				<div class="text-center w-300px py-3">
+					No notificaciones encontradas
+				</div>
+			</div>
+		</div>
+		@if (ViewData["AppHeaderLanguageBar"] != null) {
+			<div class="navbar-item dropdown">
+				<a href="#" class="navbar-link dropdown-toggle" data-bs-toggle="dropdown">
+					<span class="fi fi-us" title="us"></span>
+					<span class="d-none d-sm-inline ms-1">EN</span> <b class="caret"></b>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end">
+					<a href="javascript:;" class="dropdown-item"><span class="fi fi-us me-2" title="us"></span> English</a>
+					<a href="javascript:;" class="dropdown-item"><span class="fi fi-cn me-2" title="cn"></span> Chinese</a>
+					<a href="javascript:;" class="dropdown-item"><span class="fi fi-jp me-2" title="jp"></span> Japanese</a>
+					<a href="javascript:;" class="dropdown-item"><span class="fi fi-be me-2" title="be"></span> Belgium</a>
+					<div class="dropdown-divider"></div>
+					<a href="javascript:;" class="dropdown-item text-center">more options</a>
+				</div>
+			</div>
+		}
+		<div class="navbar-item navbar-user dropdown">
+			<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+				<div class="image image-icon bg-gray-800 text-gray-600">
+					<i class="fa fa-user"></i>
+				</div>
+				<span>
+					<span class="d-none d-md-inline">@ViewData["User"] </span>
+					<b class="caret"></b>
+				</span>
+			</a>
+			<div class="dropdown-menu dropdown-menu-end me-1">
+				<a href="javascript:;" class="dropdown-item">Edit Profile</a>
+				<a href="javascript:;" class="dropdown-item d-flex align-items-center">
+					Inbox
+					<span class="badge bg-danger rounded-pill ms-auto pb-4px">2</span>
+				</a>
+				<a href="javascript:;" class="dropdown-item">Calendar</a>
+				<a href="javascript:;" class="dropdown-item">Setting</a>
+				<div class="dropdown-divider"></div>
+				<a href="javascript:;" class="dropdown-item">Log Out</a>
+			</div>
+		</div>
+		@if (ViewData["AppSidebarTwo"] != null) {
+			<div class="navbar-divider d-none d-md-block"></div>
+			<div class="navbar-item d-none d-md-block">
+				<a href="javascript:;" data-toggle="app-sidebar-end" class="navbar-link icon">
+					<i class="fa fa-th"></i>
+				</a>
+			</div>
+		}
+	</div>
+	<!-- END header-nav -->
+</div>
+<!-- END #header -->

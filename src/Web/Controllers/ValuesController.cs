@@ -6,7 +6,7 @@ namespace DNMOFT.CostTrackr.Web.Controllers;
 
 [Authorize]
 [ApiController]
-[Route("api/[controller]")]
+[Route("[controller]")]
 public class ValuesController : ControllerBase
 {
     [HttpGet]

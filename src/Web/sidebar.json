@@ -1,7 +1,7 @@
-﻿{
+{
     "sidebarMenu": [
       {
-        "controller": "Home",
+        "controller": "",
         "icon": "fa fa-home",
         "text": "Inicio",
         "action": "Index"

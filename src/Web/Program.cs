@@ -7,7 +7,10 @@ using Microsoft.AspNetCore.Identity;
 using DNMOFT.CostTrackr.DataAccess.Entities.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddJsonFile("connectionstrings.json", optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile("sidebar.json", optional: true, reloadOnChange: true);
+
+// This line of code should be removed when deployed to production
+builder.Configuration.AddJsonFile("connectionstrings.json", optional: true, reloadOnChange: true);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
@@ -66,6 +69,9 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllers();
 
-app.MapControllerRoute("default", "api/{controller}/{action}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "api/{controller}/{action}/{id?}"
+);
 
 app.Run();

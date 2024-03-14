@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    // Call the Usuarios Web API to set the user's name in _Sidebar.cshtml
+    $.ajax({ url: "/usuario" }).then(function (data) {
+        $(".usuario").text(data.name);
+        $(".correo").text(data.email);
+    });
 
-// Write your JavaScript code.
+});

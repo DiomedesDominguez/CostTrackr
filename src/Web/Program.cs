@@ -66,6 +66,6 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllers();
 
-app.MapControllerRoute("default", "api/{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute("default", "api/{controller}/{action}/{id?}");
 
 app.Run();

@@ -1,43 +1,37 @@
 {
-    "sidebarMenu": [
-      {
-        "controller": "",
-        "icon": "fa fa-home",
-        "text": "Inicio",
-        "action": "Index"
-      },
-      {
-        "controller": "Impuestos",
-        "icon": "fa fa-percent",
-        "text": "Impuestos",
-        "action": "Index"
-      },
-      {
-        "controller": "Productos",
-        "icon": "fa fa-shopping-cart",
-        "text": "Productos",
-        "children": [
-            {
-            "controller": "Productos",
-            "action": "Index",
-            "text": "Listado"
-          },
-          {
-            "controller": "Productos",
-            "action": "Create",
-            "text": "Crear"
-          },
-          {
-            "controller": "Productos",
-            "action": "Edit",
-            "text": "Editar"
-          },
-          {
-            "controller": "Productos",
-            "action": "Inventario",
-            "text": "Inventario"
-          }
-        ]
-      }
-    ]
-  }
+  "sidebarMenu": [
+    {
+      "page": "Index",
+      "icon": "fa fa-home",
+      "text": "Inicio"
+    },
+    {
+      "page": "Impuestos",
+      "icon": "fa fa-percent",
+      "text": "Impuestos"
+    },
+    {
+      "page": "Productos",
+      "icon": "fa fa-shopping-cart",
+      "text": "Productos",
+      "children": [
+        {
+          "page": "Productos",
+          "text": "Listado"
+        },
+        {
+          "page": "Productos",
+          "text": "Crear"
+        },
+        {
+          "page": "Productos",
+          "text": "Editar"
+        },
+        {
+          "page": "Productos",
+          "text": "Inventario"
+        }
+      ]
+    }
+  ]
+}

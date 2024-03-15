@@ -2,8 +2,7 @@
 @inject IConfiguration Configuration
 @{
 	#pragma warning disable CS8602
-	var menuController = (ViewContext.RouteData.Values["controller"] != null) ? ViewContext.RouteData.Values["controller"].ToString() : null;
-	var menuAction = (ViewContext.RouteData.Values["action"] != null) ? ViewContext.RouteData.Values["action"].ToString() : null;
+	var menuPage = (ViewContext.RouteData.Values["page"] != null) ? ViewContext.RouteData.Values["page"].ToString() : null;
 	var sidebarMenu = Configuration.GetSection("sidebarMenu").GetChildren().ToArray();
 	#pragma warning restore CS8602
 }
@@ -19,12 +18,11 @@
 					<a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
 						<div class="menu-profile-cover with-shadow"></div>
 						<div class="menu-profile-image">
-							<img src="/img/user/user-13.jpg" alt="" />
+							@* <img src="/img/user/user-13.jpg" alt="" /> *@
 						</div>
 						<div class="menu-profile-info">
 							<div class="d-flex align-items-center">
-								<div class="flex-grow-1 usuario">
-									
+								<div class="flex-grow-1 usuario">									
 								</div>
 								<div class="menu-caret ms-auto"></div>
 							</div>
@@ -74,21 +72,21 @@
 								var menuChildrenLvl2 = submenu2.GetSection("children").GetChildren().ToArray();
 								@if (menuChildrenLvl2.Length > 0) {
 									@foreach (var submenu3 in menuChildrenLvl2) {
-										menuActiveLvl3 = (menuAction == submenu3["action"]) ? "active" : menuActiveLvl3;
+										menuActiveLvl3 = (menuPage == submenu3["page"]) ? "active" : menuActiveLvl3;
 									}
 								} else {
-									menuActiveLvl2 = (menuAction == submenu2["action"]) ? "active" : menuActiveLvl2;
+									menuActiveLvl2 = (menuPage == submenu2["page"]) ? "active" : menuActiveLvl2;
 								}
 							}
 						} else {
-							menuActiveLvl1 = (menuAction == submenu["action"]) ? "active" : menuActiveLvl1;
+							menuActiveLvl1 = (menuPage == submenu["page"]) ? "active" : menuActiveLvl1;
 						}
 					}
 				}
 				
-				<div class="menu-item @((menuController == @menu["controller"] || (menuActiveLvl1 == "active" || menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildren.Length > 0 ? "has-sub" : "")">
-					@if (menuChildren.Length == 0 && menu["action"] != null && menu["controller"] != null) {
-						<a class="menu-link" asp-page="@menu["controller"]">
+				<div class="menu-item @((menuPage == @menu["menuPage"] || (menuActiveLvl1 == "active" || menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildren.Length > 0 ? "has-sub" : "")">
+					@if (menuChildren.Length == 0 && menu["page"] != null) {
+						<a class="menu-link" href="/@menu["page"]">
 							@if (menu["icon"] != null) { <div class="menu-icon"><i class="@menu["icon"]"></i></div> }
 							@if (menu["img"] != null) { <div class="menu-icon-img"><img src="@menu["img"]" alt="" /></div> }
 							<div class="menu-text">
@@ -121,19 +119,19 @@
 										var menuChildrenLvl2 = submenu2.GetSection("children").GetChildren().ToArray();
 										@if (menuChildrenLvl2.Length > 0) {
 											@foreach (var submenu3 in menuChildrenLvl2) {
-												menuActiveLvl3 = (menuAction == submenu3["action"]) ? "active" : menuActiveLvl3;
+												menuActiveLvl3 = (menuPage == submenu3["page"]) ? "active" : menuActiveLvl3;
 											}
 										} else {
-											menuActiveLvl2 = (menuAction == submenu2["action"]) ? "active" : menuActiveLvl2;
+											menuActiveLvl2 = (menuPage == submenu2["page"]) ? "active" : menuActiveLvl2;
 										}
 									}
 								} else {
-									menuActiveLvl2 = (menuAction == submenu["action"]) ? "active" : menuActiveLvl2;
+									menuActiveLvl2 = (menuPage == submenu["page"]) ? "active" : menuActiveLvl2;
 								}
 								
-								<div class="menu-item @((menuAction == @submenu["action"] || (menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildrenLvl1.Length > 0 ? "has-sub" : "")">
-									@if (menuChildrenLvl1.Length == 0 && submenu["action"] != null && submenu["controller"] != null) {
-										<a class="menu-link" asp-page="@submenu["controller"]" asp-page-handler="@submenu["action"]">
+								<div class="menu-item @((menuPage == @submenu["page"] || (menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildrenLvl1.Length > 0 ? "has-sub" : "")">
+									@if (menuChildrenLvl1.Length == 0 && submenu["page"] != null) {
+										<a class="menu-link" href="/@submenu["page"]" >
 											<div class="menu-text">
 												@submenu["text"]
 												@if (submenu["highlight"] != null) { <i class="fa fa-paper-plane text-theme"></i> }
@@ -156,12 +154,12 @@
 												
 												@if (menuChildrenLvl2.Length > 0) {
 													@foreach (var submenu3 in menuChildrenLvl2) {
-														menuActiveLvl3 = (menuAction == submenu3["action"]) ? "active" : menuActiveLvl3;
+														menuActiveLvl3 = (menuPage == submenu3["page"]) ? "active" : menuActiveLvl3;
 													}
 												}
-												<div class="menu-item @((menuAction == @submenu2["action"] || menuActiveLvl3 == "active") ? "active" : "") @(menuChildrenLvl2.Length > 0 ? "has-sub" : "")">
-													@if (menuChildrenLvl2.Length == 0 && submenu2["action"] != null && submenu2["controller"] != null) {
-														<a class="menu-link" asp-page="@submenu2["controller"]" asp-page-handler="@submenu2["action"]">
+												<div class="menu-item @((menuPage == @submenu2["page"] || menuActiveLvl3 == "active") ? "active" : "") @(menuChildrenLvl2.Length > 0 ? "has-sub" : "")">
+													@if (menuChildrenLvl2.Length == 0 && submenu2["page"] != null) {
+														<a class="menu-link" href="/@submenu2["page"]" >
 															<div class="menu-text">
 																@submenu2["text"]
 																@if (submenu2["highlight"] != null) { <i class="fa fa-paper-plane text-theme"></i> }
@@ -179,9 +177,9 @@
 														@if (menuChildrenLvl2.Length > 0) {
 															<div class="menu-submenu">
 																@foreach (var submenu3 in menuChildrenLvl2) {
-																	<div class="menu-item @(menuAction == @submenu3["action"] ? "active" : "") @(menuChildrenLvl2.Length > 0 ? "has-sub" : "")">
-																		@if (menuChildrenLvl2.Length == 0 && submenu2["action"] != null && submenu3["controller"] != null) {
-																			<a class="menu-link" asp-page="@submenu3["controller"]" asp-page-handler="@submenu3["action"]">
+																	<div class="menu-item @(menuPage == @submenu3["page"] ? "active" : "") @(menuChildrenLvl2.Length > 0 ? "has-sub" : "")">
+																		@if (menuChildrenLvl2.Length == 0 && submenu2["page"] != null) {
+																			<a class="menu-link" href="/@submenu3["page"]" >
 																				<div class="menu-text">
 																					@submenu3["text"]
 																					@if (submenu3["highlight"] != null) {
@@ -213,7 +211,7 @@
 				</div>
 			}			
 			<div class="menu-item">
-				<a class="menu-link" asp-area="Identity" asp-page="/Account/Manage/Index">
+				<a class="menu-link" href="/Identity/Account/Manage/Index">
 					<div class="menu-icon"><i class="fa fa-fingerprint"></i></div>
 					<div class="menu-text">Gestión de cuenta</div>
 				</a>

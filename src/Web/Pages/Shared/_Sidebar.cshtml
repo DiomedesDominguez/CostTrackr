@@ -131,7 +131,7 @@
 								
 								<div class="menu-item @((menuPage == @submenu["page"] || (menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildrenLvl1.Length > 0 ? "has-sub" : "")">
 									@if (menuChildrenLvl1.Length == 0 && submenu["page"] != null) {
-										<a class="menu-link" href="/@submenu["page"]" >
+										<a class="menu-link" href="/@menu["page"]/@submenu["page"]" >
 											<div class="menu-text">
 												@submenu["text"]
 												@if (submenu["highlight"] != null) { <i class="fa fa-paper-plane text-theme"></i> }

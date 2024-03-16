@@ -6,30 +6,17 @@
       "text": "Inicio"
     },
     {
-      "page": "Impuestos",
-      "icon": "fa fa-percent",
-      "text": "Impuestos"
-    },
-    {
       "page": "Productos",
       "icon": "fa fa-shopping-cart",
       "text": "Productos",
       "children": [
         {
-          "page": "Productos",
+          "page": "Index",
           "text": "Listado"
         },
         {
-          "page": "Productos",
+          "page": "Create",
           "text": "Crear"
-        },
-        {
-          "page": "Productos",
-          "text": "Editar"
-        },
-        {
-          "page": "Productos",
-          "text": "Inventario"
         }
       ]
     }
